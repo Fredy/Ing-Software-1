@@ -10180,7 +10180,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "-songRated: string",
+											"text": "-songRated: Song",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -10209,7 +10209,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "-userWhoRate: string",
+											"text": "-userWhoRate: User",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -10267,7 +10267,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "-rate: int o enum ?",
+											"text": "-rate: int[1-5]",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -10495,11 +10495,11 @@
 											"containerExtending": false,
 											"left": 677,
 											"top": 639,
-											"width": 135,
+											"width": 191,
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "Playing",
+											"text": "Played",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -10567,7 +10567,7 @@
 									"containerExtending": false,
 									"left": 672,
 									"top": 632,
-									"width": 145,
+									"width": 201,
 									"height": 25,
 									"autoResize": false,
 									"stereotypeLabel": {
@@ -10613,11 +10613,11 @@
 											"containerExtending": false,
 											"left": 677,
 											"top": 662,
-											"width": 135,
+											"width": 191,
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "-songPlayed: string",
+											"text": "-songPlayed: Song",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -10642,11 +10642,11 @@
 											"containerExtending": false,
 											"left": 677,
 											"top": 677,
-											"width": 135,
+											"width": 191,
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "-userWhoPlay: string",
+											"text": "-userWhoPlay: User",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -10671,7 +10671,7 @@
 											"containerExtending": false,
 											"left": 677,
 											"top": 692,
-											"width": 135,
+											"width": 191,
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
@@ -10692,7 +10692,7 @@
 									"containerExtending": false,
 									"left": 672,
 									"top": 657,
-									"width": 145,
+									"width": 201,
 									"height": 53,
 									"autoResize": false
 								},
@@ -10726,11 +10726,11 @@
 											"containerExtending": false,
 											"left": 677,
 											"top": 715,
-											"width": 135,
+											"width": 191,
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "+playSong(song, user)",
+											"text": "+updateTimesPlayed(song, user)",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -10747,7 +10747,7 @@
 									"containerExtending": false,
 									"left": 672,
 									"top": 710,
-									"width": 145,
+									"width": 201,
 									"height": 23,
 									"autoResize": false
 								},
@@ -10811,7 +10811,7 @@
 							"containerExtending": false,
 							"left": 672,
 							"top": 632,
-							"width": 145,
+							"width": 201,
 							"height": 153,
 							"autoResize": false,
 							"stereotypeDisplay": "label",
@@ -15174,7 +15174,9 @@
 							"visibility": "private",
 							"isStatic": false,
 							"isLeaf": false,
-							"type": "string",
+							"type": {
+								"$ref": "AAAAAAFbup/oRwo3Qlc="
+							},
 							"isReadOnly": false,
 							"isOrdered": false,
 							"isUnique": false,
@@ -15192,7 +15194,9 @@
 							"visibility": "private",
 							"isStatic": false,
 							"isLeaf": false,
-							"type": "string",
+							"type": {
+								"$ref": "AAAAAAFbupkRgQcSOv4="
+							},
 							"isReadOnly": false,
 							"isOrdered": false,
 							"isUnique": false,
@@ -15228,7 +15232,7 @@
 							"visibility": "private",
 							"isStatic": false,
 							"isLeaf": false,
-							"type": "int o enum ?",
+							"type": "int[1-5]",
 							"isReadOnly": false,
 							"isOrdered": false,
 							"isUnique": false,
@@ -15298,7 +15302,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFbuoj8uzqjK+4="
 					},
-					"name": "Playing",
+					"name": "Played",
 					"ownedElements": [
 						{
 							"_type": "UMLAssociation",
@@ -15360,7 +15364,9 @@
 							"visibility": "private",
 							"isStatic": false,
 							"isLeaf": false,
-							"type": "string",
+							"type": {
+								"$ref": "AAAAAAFbup/oRwo3Qlc="
+							},
 							"isReadOnly": false,
 							"isOrdered": false,
 							"isUnique": false,
@@ -15378,7 +15384,9 @@
 							"visibility": "private",
 							"isStatic": false,
 							"isLeaf": false,
-							"type": "string",
+							"type": {
+								"$ref": "AAAAAAFbupkRgQcSOv4="
+							},
 							"isReadOnly": false,
 							"isOrdered": false,
 							"isUnique": false,
@@ -15412,7 +15420,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFcIPL5Jftxo/M="
 							},
-							"name": "playSong",
+							"name": "updateTimesPlayed",
 							"visibility": "public",
 							"isStatic": false,
 							"isLeaf": false,
@@ -15427,7 +15435,6 @@
 									"visibility": "public",
 									"isStatic": false,
 									"isLeaf": false,
-									"type": "",
 									"isReadOnly": false,
 									"isOrdered": false,
 									"isUnique": false,
@@ -15443,7 +15450,6 @@
 									"visibility": "public",
 									"isStatic": false,
 									"isLeaf": false,
-									"type": "",
 									"isReadOnly": false,
 									"isOrdered": false,
 									"isUnique": false,
