@@ -3,14 +3,21 @@ package com.espringjpa.domain;
 import java.util.Vector;
 import java.util.Date;
 
-public class PlayList implements SongList {
+public class PlayList extends SongList {
 
 	protected String name;
 	protected Date creationDate;
 	
-	public void addAlbum (Album newAlbum){
-        songList.add(newAlbum);
-    }
-
+	
+	public String getName(){
+		return name;
+	}
+	
+	public void setName(String name ){
+		this.name=name;
+	}
+	public Date getCreationDate(){
+		return creationDate;
+	}
 
 }
