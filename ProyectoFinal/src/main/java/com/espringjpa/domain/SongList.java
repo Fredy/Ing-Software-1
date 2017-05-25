@@ -1,20 +1,21 @@
 package com.espringjpa.domain;
+import java.util.Vector;
 
 public abstract class SongList {
-	protected list<Song> songList;
+	protected Vector<Song> songList;
 
 	public void addSong (Song newSong){
-        songList.push_back(newSong);
+        songList.add(newSong);
     }
 
     public void removeSong (Song songToDelete){
         songList.remove(songToDelete);
     }
 
-    public list<Song> getSongList() {
+    public Vector<Song> getSongList() {
 		return songList;
 	}
-	public void setSongList(list<Song> songList) {
+	public void setSongList(Vector<Song> songList) {
 		this.songList = songList;
 	}
 }
