@@ -1,7 +1,8 @@
 package com.espringjpa.domain;
+import java.util.Vector;
 
 public class Timeline {
-    private list<Played> songsPlayed;
+    private Vector<Played> songsPlayed;
     private User owner;
 
     public boolean show(){
@@ -10,17 +11,17 @@ public class Timeline {
 	}
 
     public void addSongPlayed (Played newSong){
-        songsPlayed.push_back(newSong);
+        songsPlayed.add(newSong);
     }
 
     public void removeSongPlayed (Played songToDelete){
         songsPlayed.remove(songToDelete);
     }
 
-    public list<Played> getSongsPlayed() {
+    public Vector<Played> getSongsPlayed() {
 		return songsPlayed;
 	}
-	public void setSongsPlayed(list<Played> songsPlayed ) {
+	public void setSongsPlayed(Vector<Played> songsPlayed ) {
 		this.songsPlayed = songsPlayed;
 	}
 
