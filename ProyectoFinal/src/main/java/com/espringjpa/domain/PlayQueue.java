@@ -1,15 +1,16 @@
 package com.espringjpa.domain;
 
+
 public class PlayQueue extends SongList {
 	
 	protected Boolean random;
 	protected Integer currentSong;
 	
-	public Boolean getRandom(){
-		return random;
-	}
-	public void setRandom(Boolean random){
-		this.random=random;
+	public boolean isRandom() {
+        return random;
+    }
+	public void setRandom(boolean random) {
+        this.random = random;
 	}
 	
 	public Integer getCurrentSong(){
@@ -18,10 +19,10 @@ public class PlayQueue extends SongList {
 	public void setCurrentSong(Integer currentSong){
 		this.currentSong= currentSong;
 	}
-	public void addPlayList(PlayList newPlayList){
-		//something
-	}
-	
+
+	public void addPlayList (PlayList newPlayList){
+        //songList.add(newPlayList); agregar cancion por cancion
+    }
 	public void next(){
 		currentSong+=1;
 		//something
