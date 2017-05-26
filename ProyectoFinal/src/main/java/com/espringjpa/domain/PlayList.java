@@ -5,6 +5,7 @@ import java.util.Date;
 
 public class PlayList extends SongList {
 
+	// agregar Id??
 	protected String name;
 	protected Date creationDate;
 	
