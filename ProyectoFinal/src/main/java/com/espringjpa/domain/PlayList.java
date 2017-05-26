@@ -1,6 +1,6 @@
 package com.espringjpa.domain;
 
-import java.util.Vector;
+//import java.util.Vector;
 import java.util.Date;
 
 public class PlayList extends SongList {

@@ -1,9 +1,19 @@
 package com.espringjpa.domain;
 import java.util.Date;
+import javax.persistence.*;
 
+//@Entity
+//@Table(name="rating")
 public class Rating {
+	//@Id
+	private long id;
+	
+	
+	//@ManyToOne
 	private Song songRated;
+	
 	private User userWhoRated;
+
 	private Date dateRated;
 	private int rate;
 	
@@ -18,11 +28,12 @@ public class Rating {
 	public void setSongRated(Song songRated) {
 		this.songRated = songRated;
 	}
-	public User getUserWhoRated() {
+	public User getUserWhoRated(){
 		return userWhoRated;
 	}
-	public void setUserWhoRated(User userWhoRated) {
-		this.userWhoRated = userWhoRated;
+	
+	public void setUserWhoRated(User user) {
+		this.userWhoRated = user;
 	}
 	public Date getDateRated() {
 		return dateRated;

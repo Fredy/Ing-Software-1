@@ -17,12 +17,16 @@ public class Played {
 	public void setSongPlayed(Song songPlayed) {
 		this.songPlayed = songPlayed;
 	}
+	
 	public User getUserWhoPlayed() {
 		return UserWhoPlayed;
 	}
+
 	public void setUserWhoPlayed(User userWhoPlayed) {
 		UserWhoPlayed = userWhoPlayed;
 	}
+
+	
 	public Date getDatePlayed() {
 		return datePlayed;
 	}

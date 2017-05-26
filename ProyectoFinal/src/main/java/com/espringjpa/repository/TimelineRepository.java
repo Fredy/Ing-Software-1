@@ -6,7 +6,7 @@ import java.util.Map;
 
 import com.espringjpa.domain.User;
 import com.espringjpa.domain.Timeline;
-import org.springframework.stereotype.Component;
+//import org.springframework.stereotype.Component;
 
 
 
@@ -18,8 +18,9 @@ public class TimelineRepository implements ITimelineRepository{
 
     @Override
     public void save(Timeline timeline){
-        Timelines.put(timeline.getOwner(), timeline);
+        //Timelines.put(timeline.getOwner(), timeline);
     }
+    
     @Override
     public Timeline get(User owner) {
         return Timelines.get(owner);
