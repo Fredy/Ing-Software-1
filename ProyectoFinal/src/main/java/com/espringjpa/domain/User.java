@@ -5,8 +5,8 @@ public class User extends Person {
     private Timeline timeline; //TODO: puede haber conflicto con Timeline de javafx...
     private Vector<Artist> followedArtists;
     private Vector<User> followedUsers;
-    private Vector<Playlist> playlists;
-    private Vector<Playlist> followedPlaylists;
+    private Vector<PlayList> playlists;
+    private Vector<PlayList> followedPlaylists;
 
     public Timeline getTimeline() {
         return timeline;
@@ -20,11 +20,11 @@ public class User extends Person {
         return followedUsers;
     }
 
-    public Vector<Playlist> getPlaylists() {
+    public Vector<PlayList> getPlaylists() {
         return playlists;
     }
 
-    public Vector<Playlist> getFollowedPlaylists() {
+    public Vector<PlayList> getFollowedPlaylists() {
         return followedPlaylists;
     }
     
@@ -54,12 +54,12 @@ public class User extends Person {
         // TODO: do something;
     }
 
-    void followPlaylist(Playlist targetPlaylist) {
+    void followPlaylist(PlayList targetPlaylist) {
         // TODO: verificar: si ya lo sigue, no hace nada, o esto es parte de la base de datos.
         followedPlaylists.add(targetPlaylist);
     }
 
-    void unfollowPlaylist(Playlist targetPlaylist) {
+    void unfollowPlaylist(PlayList targetPlaylist) {
         followedPlaylists.remove(targetPlaylist);
     }
 
