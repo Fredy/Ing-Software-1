@@ -1,12 +1,15 @@
 package com.espringjpa.domain;
 
+import java.util.List;
+import java.net.URL;
+
 public class Song {
 	private String name;
 	private boolean active;
 	private int avgRating;
 	private long timesPlayed;
-	private list<Artist> artist;
-	private Url file;
+	private List<Artist> artist;
+	private URL file;
 	
 	public boolean updateTimesPlayed(){
 		//do something
@@ -46,13 +49,13 @@ public class Song {
 		this.timesPlayed = timesPlayed;
 	}
 	
-	public list<Artist> getArtist() {
+	public List<Artist> getArtist() {
 		return artist;
 	}
-	public void setArtist(list<Artist> artist) {
+	public void setArtist(List<Artist> artist) {
 		this.artist = artist;
 	}
-	public Url getFile() {
+	public URL getFile() {
 		return file;
 	}
 	//public void setFile(Url file) { this.file = file; } // this field is only for read
