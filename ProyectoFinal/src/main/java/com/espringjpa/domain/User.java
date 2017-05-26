@@ -27,7 +27,7 @@ public class User extends Person {
     public Vector<Playlist> getFollowedPlaylists() {
         return followedPlaylists;
     }
-    
+
     void followUser(User targetUser) {
         // TODO: verificar: si ya lo sigue, no hace nada, o esto es parte de la base de datos.
         followedUsers.add(targetUser);
