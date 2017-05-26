@@ -6,7 +6,7 @@ import com.espringjpa.domain.PlayList;
 
 public interface IPlaylistRepository {
 
-	void save(PlayList PlayList);
+	void save(PlayList playList);
 
 	PlayList get(String name); // name? o id?
 
