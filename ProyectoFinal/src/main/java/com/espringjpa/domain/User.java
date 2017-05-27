@@ -23,12 +23,19 @@ public class User extends Person {
             inverseJoinColumns = @JoinColumn(name="UserID2", referencedColumnName = "id")
     )
     private List<User> followedUsers;
-    /*
+    
+    
+    @OneToMany
+    @JoinTable
+    (
+        name="UserPlaylists",
+        joinColumns={ @JoinColumn(name="UserID", referencedColumnName="id") },
+        inverseJoinColumns={ @JoinColumn(name="PlayListID", referencedColumnName="id", unique=true) }
+    )
+    private List<PlayList> playlists;
     //@OneToMany
-    private Vector<PlayList> playlists;
-    //@OneToMany
-    private Vector<PlayList> followedPlaylists;
-
+    //private Vector<PlayList> followedPlaylists;
+/*
     public Timeline getTimeline() {
         return timeline;
     }
