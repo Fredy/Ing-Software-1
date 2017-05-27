@@ -12,7 +12,7 @@ public class Timeline {
 	
     private Vector<Played> songsPlayed;
     
-    @OneToOne
+    @OneToOne(mappedBy="timeline")
     private User owner;
 
     public boolean show(){
