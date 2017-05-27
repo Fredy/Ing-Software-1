@@ -9,12 +9,13 @@ public class User extends Person {
 	// TODO: uncomment the '@' when everything is implemented...
     @Id
     private long id;
-/*
+
     //@OneToOne
     private Timeline timeline; // It could conflict with timeline from javafx...
-    //@ManyToMany
+    @ManyToMany(mappedBy="followedBy")
     private Vector<Artist> followedArtists;
     //@ManyToMany
+    /*
     private Vector<User> followedUsers;
     //@OneToMany
     private Vector<PlayList> playlists;
