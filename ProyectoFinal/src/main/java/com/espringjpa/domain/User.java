@@ -3,13 +3,13 @@ import java.util.Vector;
 
 import javax.persistence.*;
 
-//@Entity
-//@Table(name = "user_table")
+@Entity
+@Table(name = "user_table")
 public class User extends Person {
 	// TODO: uncomment the '@' when everything is implemented...
-    //@Id
+    @Id
     private long id;
-
+/*
     //@OneToOne
     private Timeline timeline; // It could conflict with timeline from javafx...
     //@ManyToMany
@@ -75,5 +75,6 @@ public class User extends Person {
     void unfollowPlaylist(PlayList targetPlaylist) {
         followedPlaylists.remove(targetPlaylist);
     }
+    */
 
 }
