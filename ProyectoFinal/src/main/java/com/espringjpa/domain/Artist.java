@@ -16,7 +16,7 @@ public class Artist {
     private String name;
     private boolean active;
     private Vector<Album> albums;
-
+    private Vector<User> followedBy;
 
     //Methods
     public long getId() {
