@@ -3,16 +3,21 @@ import java.util.Vector;
 
 import javax.persistence.*;
 
-@Entity
+//@Entity
 public class User extends Person {
-
-    @Id
+	// TODO: uncomment the '@' when everything is implemented...
+    //@Id
     private long id;
 
+    //@OneToOne
     private Timeline timeline; // It could conflict with timeline from javafx...
+    //@ManyToMany
     private Vector<Artist> followedArtists;
+    //@ManyToMany
     private Vector<User> followedUsers;
+    //@OneToMany
     private Vector<PlayList> playlists;
+    //@OneToMany
     private Vector<PlayList> followedPlaylists;
 
     public Timeline getTimeline() {
