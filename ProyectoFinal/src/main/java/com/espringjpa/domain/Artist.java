@@ -16,6 +16,13 @@ public class Artist {
     private String name;
     private boolean active;
     private Vector<Album> albums;
+
+    @ManyToMany
+    @JoinTable(
+            name = "ArtistUser",
+            joinColumns = @JoinColumn(name = "ArtistID", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name="UserID", referencedColumnName = "id")
+    )
     private Vector<User> followedBy;
 
     //Methods
