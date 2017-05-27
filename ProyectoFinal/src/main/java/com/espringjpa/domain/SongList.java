@@ -11,7 +11,7 @@ public abstract class SongList {
 	@Id
 	@Column(name = "id")
 	private Long idSongList;
-	
+	/*
 	@OneToMany
 	@JoinTable(name = "songList_song", 
 		joinColumns = @JoinColumn(name = "idSongList", referencedColumnName = "id"),
@@ -35,5 +35,5 @@ public abstract class SongList {
 	}
 	public void setSongList(Vector<Song> songList) {
 		this.songList = songList;
-	}
+	}*/
 }
