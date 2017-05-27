@@ -1,5 +1,5 @@
 package com.espringjpa.domain;
-import java.util.Vector;
+import java.util.List;
 
 import javax.persistence.*;
 
@@ -10,7 +10,9 @@ public class Timeline {
 	@Id
     private long id;
 	
-    private Vector<Played> songsPlayed;
+	@OneToMany
+	@JoinColumn(name="SongPlayed")
+    private List<Played> songsPlayed;
     
     @OneToOne(mappedBy="timeline")
     private User owner;
@@ -28,10 +30,10 @@ public class Timeline {
         songsPlayed.remove(songToDelete);
     }
 
-    public Vector<Played> getSongsPlayed() {
+    public List<Played> getSongsPlayed() {
 		return songsPlayed;
 	}
-	public void setSongsPlayed(Vector<Played> songsPlayed ) {
+	public void setSongsPlayed(List<Played> songsPlayed ) {
 		this.songsPlayed = songsPlayed;
 	}
 
