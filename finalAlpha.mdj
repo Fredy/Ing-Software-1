@@ -5803,7 +5803,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "-songsPlayed: vector<Played>",
+											"text": "-songsPlayed: list<Played>",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5
 										},
@@ -13154,7 +13154,7 @@
 							"visibility": "private",
 							"isStatic": false,
 							"isLeaf": false,
-							"type": "vector<Played>",
+							"type": "list<Played>",
 							"isReadOnly": false,
 							"isOrdered": false,
 							"isUnique": false,
