@@ -11,13 +11,19 @@ public class User extends Person {
     @Id
     private long id;
 
-    //@OneToOne
-    //private Timeline timeline; // It could conflict with timeline from javafx...
+    @OneToOne
+    private Timeline timeline; // It could conflict with timeline from javafx...
     @ManyToMany(mappedBy="followedBy")
     private List<Artist> followedArtists;
-    //@ManyToMany
+
+    @ManyToMany
+    @JoinTable(
+            name = "UserUser",
+            joinColumns = @JoinColumn(name = "UserID1", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name="UserID2", referencedColumnName = "id")
+    )
+    private List<User> followedUsers;
     /*
-    private Vector<User> followedUsers;
     //@OneToMany
     private Vector<PlayList> playlists;
     //@OneToMany
