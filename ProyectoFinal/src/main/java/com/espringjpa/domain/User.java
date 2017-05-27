@@ -33,8 +33,8 @@ public class User extends Person {
         inverseJoinColumns={ @JoinColumn(name="PlayListID", referencedColumnName="id", unique=true) }
     )
     private List<PlayList> playlists;
-    //@OneToMany
-    //private Vector<PlayList> followedPlaylists;
+    @ManyToMany(mappedBy="followers")
+    private List<PlayList> followedPlaylists;
 /*
     public Timeline getTimeline() {
         return timeline;
