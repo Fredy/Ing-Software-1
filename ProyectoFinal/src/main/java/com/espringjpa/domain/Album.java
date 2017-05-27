@@ -1,5 +1,6 @@
 package com.espringjpa.domain;
 
+import java.util.List;
 import java.util.Vector;
 import javax.persistence.*;
 
@@ -18,8 +19,8 @@ public class Album {
 
     private Vector<Song> songs;
 
-
-    private Vector<Artist> artists;
+    @ManyToMany(mappedBy = "albums")
+    private List<Artist> artists;
 
     //Methods
     public long getId() {
@@ -62,7 +63,7 @@ public class Album {
         return songs;
     }
 
-    public Vector<Artist> getArtists() {
+    public List<Artist> getArtists() {
         return artists;
     }
 
