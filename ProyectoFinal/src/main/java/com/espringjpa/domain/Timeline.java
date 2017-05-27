@@ -1,15 +1,25 @@
 package com.espringjpa.domain;
 import java.util.Vector;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "timeline")
 public class Timeline {
+	
+	@Id
+    private long id;
+	
     private Vector<Played> songsPlayed;
-    private User owner;
+   // private User owner;
 
     public boolean show(){
 		//do something
 		return true;
 	}
-
+/*
     public void addSongPlayed (Played newSong){
         songsPlayed.add(newSong);
     }
@@ -30,5 +40,5 @@ public class Timeline {
 	}
 	public void setUser(User owner) {
 		this.owner = owner;
-	}
+	}*/
 }
