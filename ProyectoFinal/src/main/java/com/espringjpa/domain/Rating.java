@@ -2,16 +2,17 @@ package com.espringjpa.domain;
 import java.util.Date;
 import javax.persistence.*;
 
-//@Entity
-//@Table(name="rating")
+@Entity
+@Table(name="rating")
 public class Rating {
-	//@Id
+	@Id
 	private long id;
 	
-	
-	//@ManyToOne
+	@ManyToOne
+	@JoinColumn(name="songRated")
 	private Song songRated;
-	
+	@ManyToOne
+	@JoinColumn(name="userWhoRated")	
 	private User userWhoRated;
 
 	private Date dateRated;
