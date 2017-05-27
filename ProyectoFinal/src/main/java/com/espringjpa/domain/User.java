@@ -11,8 +11,8 @@ public class User extends Person {
     @Id
     private long id;
 
-    //@OneToOne
-    //private Timeline timeline; // It could conflict with timeline from javafx...
+    @OneToOne
+    private Timeline timeline; // It could conflict with timeline from javafx...
     @ManyToMany(mappedBy="followedBy")
     private List<Artist> followedArtists;
 
