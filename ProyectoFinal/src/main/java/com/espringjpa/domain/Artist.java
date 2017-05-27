@@ -11,12 +11,6 @@ import javax.persistence.*;
 public class Artist {
     //Attributes
     @Id
-    @SequenceGenerator(name="webartist_idwebartist_seq",
-            sequenceName="webartist_idwebartist_seq",
-            allocationSize=1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE,
-            generator="webalbum_idwebartist_seq")
-    @Column(name = "id", updatable=false)
     private long id;
     @Column(name = "name")
     private String name;

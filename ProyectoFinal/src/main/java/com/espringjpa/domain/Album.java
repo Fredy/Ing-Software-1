@@ -11,17 +11,10 @@ import javax.persistence.*;
 public class Album {
     //Attributes
     @Id
-    @SequenceGenerator(name="webalbum_idwebalbum_seq",
-            sequenceName="webalbum_idwebalbum_seq",
-            allocationSize=1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE,
-            generator="webalbum_idwebalbum_seq")
-    @Column(name = "id", updatable=false)
     private long id;
     @Column (name = "name")
     private String name;
     private boolean active;
-
 
     private Vector<Song> songs;
 
