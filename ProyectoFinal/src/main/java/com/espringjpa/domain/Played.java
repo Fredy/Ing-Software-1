@@ -8,7 +8,7 @@ public class Played {
 	@Id
 	private long id;
 	@ManyToOne
-	@JoinColumn(name="songPlayed")
+	@JoinColumn(name="TimelineOwner")
 	private Song songPlayed;
 	@ManyToOne
 	@JoinColumn(name="UserWhoPlayed")
