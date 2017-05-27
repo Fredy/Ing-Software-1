@@ -1,17 +1,38 @@
 package com.espringjpa.domain;
 
 import java.util.Vector;
+import javax.persistence.*;
 /**
  * Created by mathHellscream
  */
+
+@Entity
+@Table(name = "Artist")
 public class Artist {
     //Attributes
+    @Id
+    @SequenceGenerator(name="webartist_idwebartist_seq",
+            sequenceName="webartist_idwebartist_seq",
+            allocationSize=1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE,
+            generator="webalbum_idwebartist_seq")
+    @Column(name = "id", updatable=false)
+    private long id;
+    @Column(name = "name")
     private String name;
     private boolean active;
     private Vector<Album> albums;
 
 
     //Methods
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
     public String getName() {
         return name;
     }
