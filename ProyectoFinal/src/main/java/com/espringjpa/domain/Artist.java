@@ -16,7 +16,15 @@ public class Artist {
     @Column(name = "name")
     private String name;
     private boolean active;
-    private Vector<Album> albums;
+
+
+    @ManyToMany
+    @JoinTable(
+            name = "ArtistAlbum",
+            joinColumns = @JoinColumn(name = "ArtistID", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name="AlbumID", referencedColumnName = "id")
+    )
+    private List<Album> albums;
 
     @ManyToMany
     @JoinTable(
@@ -51,7 +59,7 @@ public class Artist {
         this.active = active;
     }
 
-    public Vector<Album> getAlbums() {
+    public List<Album> getAlbums() {
         return albums;
     }
 
