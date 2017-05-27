@@ -1,9 +1,7 @@
 package com.espringjpa.domain;
 import java.util.Vector;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "timeline")
@@ -13,7 +11,9 @@ public class Timeline {
     private long id;
 	
     private Vector<Played> songsPlayed;
-    //private User owner;
+    
+    @OneToOne
+    private User owner;
 
     public boolean show(){
 		//do something
@@ -34,11 +34,11 @@ public class Timeline {
 	public void setSongsPlayed(Vector<Played> songsPlayed ) {
 		this.songsPlayed = songsPlayed;
 	}
-/*
+
 	public User getUser() {
 		return owner;
 	}
 	public void setUser(User owner) {
 		this.owner = owner;
-	}*/
+	}
 }
