@@ -2,14 +2,32 @@ package com.espringjpa.domain;
 
 import java.util.List;
 import java.net.URL;
+/*
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.Id;
+import javax.persistence.Column;
+*/
+import javax.persistence.*;
 
+@Entity
+@Table (name="Song")
 public class Song {
+	
+	@Id
+	private Integer id; //NOTE: I think "URL file" might be a possible id
+	@Column (name ="name")
 	private String name;
 	private boolean active;
 	private int avgRating;
 	private long timesPlayed;
-	private List<Artist> artist;
+	
+	//private List<Artist> artist;
 	private URL file;
+	
+	public Integer getId() {
+		return id;
+	}
 	
 	public boolean updateTimesPlayed(){
 		//do something
@@ -48,7 +66,7 @@ public class Song {
 	public void setTimesPlayed(long timesPlayed) {
 		this.timesPlayed = timesPlayed;
 	}
-	
+	/*
 	public List<Artist> getArtist() {
 		return artist;
 	}
@@ -58,6 +76,7 @@ public class Song {
 	public URL getFile() {
 		return file;
 	}
+	*/
 	//public void setFile(Url file) { this.file = file; } // this field is only for read
 	
 }
