@@ -22,7 +22,9 @@ public class Song {
 	private int avgRating;
 	private long timesPlayed;
 	
-	//private List<Artist> artist;
+	@ManyToMany(mappedBy="songs")
+	private List<Album> albums;
+
 	private URL file;
 	
 	public Integer getId() {
@@ -66,17 +68,17 @@ public class Song {
 	public void setTimesPlayed(long timesPlayed) {
 		this.timesPlayed = timesPlayed;
 	}
-	/*
-	public List<Artist> getArtist() {
-		return artist;
+	public List<Album> getAlbums() {
+		return albums;
 	}
-	public void setArtist(List<Artist> artist) {
-		this.artist = artist;
+
+	public void setAlbums(List<Album> albums) {
+		this.albums = albums;
 	}
+	
 	public URL getFile() {
 		return file;
 	}
-	*/
 	//public void setFile(Url file) { this.file = file; } // this field is only for read
 	
 }
