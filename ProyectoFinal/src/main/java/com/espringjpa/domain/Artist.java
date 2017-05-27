@@ -1,5 +1,6 @@
 package com.espringjpa.domain;
 
+import java.util.List;
 import java.util.Vector;
 import javax.persistence.*;
 /**
@@ -23,7 +24,7 @@ public class Artist {
             joinColumns = @JoinColumn(name = "ArtistID", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name="UserID", referencedColumnName = "id")
     )
-    private Vector<User> followedBy;
+    private List<User> followedBy;
 
     //Methods
     public long getId() {

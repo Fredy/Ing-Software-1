@@ -1,4 +1,5 @@
 package com.espringjpa.domain;
+import java.util.List;
 import java.util.Vector;
 
 import javax.persistence.*;
@@ -11,9 +12,9 @@ public class User extends Person {
     private long id;
 
     //@OneToOne
-    private Timeline timeline; // It could conflict with timeline from javafx...
+    //private Timeline timeline; // It could conflict with timeline from javafx...
     @ManyToMany(mappedBy="followedBy")
-    private Vector<Artist> followedArtists;
+    private List<Artist> followedArtists;
     //@ManyToMany
     /*
     private Vector<User> followedUsers;
