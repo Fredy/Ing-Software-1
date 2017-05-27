@@ -1,6 +1,13 @@
 package com.espringjpa.domain;
 
+import javax.persistence.*;
+
+@Entity
 public class Admin extends Person{
+
+    @Id
+    private long id;
+
     void activateUser(User targetUser) {
 
     }

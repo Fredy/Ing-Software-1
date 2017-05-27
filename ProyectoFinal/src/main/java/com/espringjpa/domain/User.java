@@ -1,8 +1,15 @@
 package com.espringjpa.domain;
 import java.util.Vector;
 
+import javax.persistence.*;
+
+@Entity
 public class User extends Person {
-    private Timeline timeline; //TODO: puede haber conflicto con Timeline de javafx...
+
+    @Id
+    private long id;
+
+    private Timeline timeline; // It could conflict with timeline from javafx...
     private Vector<Artist> followedArtists;
     private Vector<User> followedUsers;
     private Vector<PlayList> playlists;
@@ -29,7 +36,7 @@ public class User extends Person {
     }
 
     void followUser(User targetUser) {
-        // TODO: verificar: si ya lo sigue, no hace nada, o esto es parte de la base de datos.
+        // TODO: Verify: if this already follows a User -> do nothing, else add it; or this is part of the db?.
         followedUsers.add(targetUser);
     }
 
@@ -38,7 +45,7 @@ public class User extends Person {
     }
 
     void followArtist(Artist targetArtist) {
-        // TODO: verificar: si ya lo sigue, no hace nada, o esto es parte de la base de datos.
+        // TODO: Verify: if this already follows a User -> do nothing, else add it; or this is part of the db?.
         followedArtists.add(targetArtist);
     }
 
@@ -47,7 +54,7 @@ public class User extends Person {
     }
 
     void createPlaylist(String playlistName) {
-        // TODO: hacer algo;
+        // TODO: do something
     }
 
     void rateSong(Song song, int points) {
@@ -55,7 +62,7 @@ public class User extends Person {
     }
 
     void followPlaylist(PlayList targetPlaylist) {
-        // TODO: verificar: si ya lo sigue, no hace nada, o esto es parte de la base de datos.
+        // TODO: Verify: if this already follows a User -> do nothing, else add it; or this is part of the db?.
         followedPlaylists.add(targetPlaylist);
     }
 

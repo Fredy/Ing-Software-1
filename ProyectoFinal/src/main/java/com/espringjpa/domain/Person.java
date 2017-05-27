@@ -1,7 +1,15 @@
 package com.espringjpa.domain;
 import java.util.Date;
 
+import javax.persistence.*;
+
+@Entity
+@Inheritance(strategy=InheritanceType.JOINED)
 public abstract class Person {
+
+	@Id
+	private long id;
+
 	protected String name;
 	protected boolean gender;
 	protected String userName;
