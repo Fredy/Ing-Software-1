@@ -17,18 +17,20 @@ public class PlayList extends SongList {
 	protected String name;
 	protected Date creationDate;
 	
-//	@OneToMany
-//		@JoinTable(name = "songList_song", 
-//		joinColumns = @JoinColumn(name = "idSongList", referencedColumnName = "id"),
-//		inverseJoinColumns = @JoinColumn(name = "idSong", referencedColumnName = "id"))
-	protected Vector<Song> songList;
+	@OneToMany
+		@JoinTable(name = "playList_song", 
+		joinColumns = @JoinColumn(name = "idPlayList"),
+		inverseJoinColumns = @JoinColumn(name = "idSong"))
+	protected List<Song> songList;
 	
-//	@ManyToMany
-//    @JoinTable(
-//            name = "followedPlayListUser",
-//            joinColumns = @JoinColumn(name = "PlayListID", referencedColumnName = "id"),
-//            inverseJoinColumns = @JoinColumn(name="UserID", referencedColumnName = "id"))
-    private List<User> followers;
+	
+	
+	@ManyToMany
+    @JoinTable(
+            name = "followedPlayListUser",
+            joinColumns = @JoinColumn(name = "PlayListID", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name="UserID", referencedColumnName = "id"))
+	private List<User> followers;
 	
 	public String getName(){
 		return name;
