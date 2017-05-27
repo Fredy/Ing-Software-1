@@ -13,13 +13,13 @@ public class Timeline {
     private long id;
 	
     private Vector<Played> songsPlayed;
-   // private User owner;
+    //private User owner;
 
     public boolean show(){
 		//do something
 		return true;
 	}
-/*
+
     public void addSongPlayed (Played newSong){
         songsPlayed.add(newSong);
     }
@@ -34,7 +34,7 @@ public class Timeline {
 	public void setSongsPlayed(Vector<Played> songsPlayed ) {
 		this.songsPlayed = songsPlayed;
 	}
-
+/*
 	public User getUser() {
 		return owner;
 	}
