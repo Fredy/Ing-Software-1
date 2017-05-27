@@ -1,11 +1,17 @@
 package com.espringjpa.domain;
 
 //import java.util.Vector;
-import java.util.Date;
 
+import java.util.Date;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+@Entity 
 public class PlayList extends SongList {
 
-	// agregar Id??
 	protected String name;
 	protected Date creationDate;
 	
