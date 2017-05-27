@@ -1,8 +1,17 @@
 package com.espringjpa.domain;
 import java.util.Date;
-
+import javax.persistence.*;
+@Entity
+@Table(name="played")
 public class Played {
+	
+	@Id
+	private long id;
+	@ManyToOne
+	@JoinColumn(name="songPlayed")
 	private Song songPlayed;
+	@ManyToOne
+	@JoinColumn(name="UserWhoPlayed")
 	private User UserWhoPlayed;
 	private Date datePlayed;
 	
@@ -25,7 +34,7 @@ public class Played {
 	public void setUserWhoPlayed(User userWhoPlayed) {
 		UserWhoPlayed = userWhoPlayed;
 	}
-
+	
 	
 	public Date getDatePlayed() {
 		return datePlayed;
@@ -34,3 +43,4 @@ public class Played {
 		this.datePlayed = datePlayed;
 	}
 }
+
