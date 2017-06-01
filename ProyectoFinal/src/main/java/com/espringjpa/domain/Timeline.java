@@ -8,6 +8,7 @@ import javax.persistence.*;
 public class Timeline {
 	
 	@Id
+	@Column(name = "idTimeline")
     private long id;
 	
 	@OneToMany
@@ -15,6 +16,7 @@ public class Timeline {
     private List<Played> songsPlayed;
     
     @OneToOne(mappedBy="timeline")
+	@JoinColumn(name="owner")
     private User owner;
 
     public boolean show(){
