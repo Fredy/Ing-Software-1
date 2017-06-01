@@ -6,7 +6,7 @@ import javax.persistence.*;
 public class Admin extends Person{
 
     @Id
-    private long id;
+    private Long id;
 
     void activateUser(User targetUser) {
 
