@@ -8,7 +8,7 @@ import javax.persistence.*;
 public abstract class Person {
 
 	@Id
-	private long id;
+	private Long id;
 
 	protected String name;
 	protected boolean gender;

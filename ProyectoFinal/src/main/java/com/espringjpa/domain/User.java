@@ -9,7 +9,7 @@ import javax.persistence.*;
 public class User extends Person {
 	// TODO: uncomment the '@' when everything is implemented...
     @Id
-    private long id;
+    private Long id;
 
     @OneToOne
     private Timeline timeline; // It could conflict with timeline from javafx...
