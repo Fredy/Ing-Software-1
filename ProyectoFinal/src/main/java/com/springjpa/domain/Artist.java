@@ -21,8 +21,8 @@ public class Artist {
     @ManyToMany
     @JoinTable(
             name = "ArtistAlbum",
-            joinColumns = @JoinColumn(name = "ArtistID", referencedColumnName = "id"),
-            inverseJoinColumns = @JoinColumn(name="AlbumID", referencedColumnName = "id")
+            joinColumns = @JoinColumn(name = "ArtistId", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name="AlbumId", referencedColumnName = "id")
     )
     private List<Album> albums;
 
