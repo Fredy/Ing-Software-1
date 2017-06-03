@@ -21,26 +21,25 @@ public class Played {
 	}
 	
 	public Song getSongPlayed() {
-		return songPlayed;
+	    return songPlayed;
 	}
 	public void setSongPlayed(Song songPlayed) {
-		this.songPlayed = songPlayed;
+	    this.songPlayed = songPlayed;
 	}
 	
 	public User getUserWhoPlayed() {
-		return UserWhoPlayed;
+	    return UserWhoPlayed;
 	}
 
 	public void setUserWhoPlayed(User userWhoPlayed) {
-		UserWhoPlayed = userWhoPlayed;
+	    UserWhoPlayed = userWhoPlayed;
 	}
-	
-	
+
 	public Date getDatePlayed() {
-		return datePlayed;
+	    return datePlayed;
 	}
 	public void setDatePlayed(Date datePlayed) {
-		this.datePlayed = datePlayed;
+	    this.datePlayed = datePlayed;
 	}
 }
 
