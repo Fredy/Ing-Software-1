@@ -49,25 +49,31 @@ public class Song {
 	public String getName() {
 		return name;
 	}
-	//public void setName(String name) { this.name = name; } // this field is only for read
+
 	public boolean isActive() {
 		return active;
 	}
+
 	public void setActive(boolean active) {
 		this.active = active;
 	}
+
 	public int getAvgRating() {
 		return avgRating;
 	}
+
 	public void setAvgRating(int avgRating) {
 		this.avgRating = avgRating;
 	}
+
 	public long getTimesPlayed() {
 		return timesPlayed;
 	}
+
 	public void setTimesPlayed(long timesPlayed) {
 		this.timesPlayed = timesPlayed;
 	}
+
 	public List<Album> getAlbums() {
 		return albums;
 	}
@@ -79,6 +85,5 @@ public class Song {
 	public URL getFile() {
 		return file;
 	}
-	//public void setFile(Url file) { this.file = file; } // this field is only for read
-	
+
 }

@@ -5,7 +5,7 @@ package com.springjpa.repository;
  */
 
 import org.springframework.data.repository.CrudRepository;
-import com.springjpa.domain.Artist;
+import com.springjpa.domain.Album;
 
-public interface ArtistRepository extends CrudRepository<Artist,Long> {
+public interface AlbumRepository extends CrudRepository<Album,Long>{
 }

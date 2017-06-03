@@ -26,9 +26,11 @@ public class Rating {
 	public Song getSongRated() {
 		return songRated;
 	}
+
 	public void setSongRated(Song songRated) {
 		this.songRated = songRated;
 	}
+
 	public User getUserWhoRated(){
 		return userWhoRated;
 	}
@@ -48,4 +50,5 @@ public class Rating {
 	public void setRate(int rate) {
 		this.rate = rate;
 	}
+
 }
