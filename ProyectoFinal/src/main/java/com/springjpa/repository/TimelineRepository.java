@@ -1,12 +1,11 @@
-package com.espringjpa.repository;
+package com.springjpa.repository;
 
 import java.util.Collection;
 
-import com.espringjpa.domain.Timeline;
-
-
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
+
+import com.springjpa.domain.Timeline;
 
 
 public interface TimelineRepository extends CrudRepository<Timeline, Long>{

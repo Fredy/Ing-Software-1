@@ -5,4 +5,4 @@
  * @author mariangela
  *
  */
-package com.espringjpa.repository;
+package com.springjpa.repository;

@@ -1,10 +1,10 @@
-package com.espringjpa.repository;
-
-import com.espringjpa.domain.Artist;
+package com.springjpa.repository;
 
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+
+import com.springjpa.domain.Artist;
 
 /**
  * Created by MathHellscream

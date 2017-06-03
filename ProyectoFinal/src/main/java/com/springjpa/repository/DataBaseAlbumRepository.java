@@ -1,27 +1,27 @@
-package com.espringjpa.repository;
-
-import com.espringjpa.domain.Artist;
+package com.springjpa.repository;
 
 import java.util.Collection;
+
+import com.springjpa.domain.Album;
+import com.springjpa.domain.Artist;
 
 /**
  * Created by MathHellscream
  */
-public class DataBaseArtistRepository implements IArtistRepository {
-
+public class DataBaseAlbumRepository implements IAlbumRepository {
     @Override
-    public void save(Artist artist) {
+    public void save(Album album) {
         //INSERT OR UPDATE
     }
 
     @Override
-    public Artist get(long idNumber) {
+    public Album get(long idNumber) {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public Collection<Artist> getAll() {
+    public Collection<Album> getAll() {
         // TODO Auto-generated method stub
         return null;
     }

@@ -1,11 +1,11 @@
-package com.espringjpa.repository;
+package com.springjpa.repository;
 
 import java.util.Collection;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
-import com.espringjpa.domain.PlayList;
+import com.springjpa.domain.PlayList;
 
 //@Component
 public interface PlayListRepository extends CrudRepository<PlayList, Long>{

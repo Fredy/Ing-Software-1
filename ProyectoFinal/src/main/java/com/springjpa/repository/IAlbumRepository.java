@@ -1,8 +1,8 @@
-package com.espringjpa.repository;
-
-import com.espringjpa.domain.Album;
+package com.springjpa.repository;
 
 import java.util.Collection;
+
+import com.springjpa.domain.Album;
 
 /**
  * Created by MathHellscream

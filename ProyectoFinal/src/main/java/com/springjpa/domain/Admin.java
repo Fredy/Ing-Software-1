@@ -1,4 +1,4 @@
-package com.espringjpa.domain;
+package com.springjpa.domain;
 
 import javax.persistence.*;
 

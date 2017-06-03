@@ -1,4 +1,4 @@
-package com.espringjpa.domain;
+package com.springjpa.domain;
 import java.util.Date;
 import javax.persistence.*;
 @Entity

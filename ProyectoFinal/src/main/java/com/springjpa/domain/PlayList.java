@@ -1,10 +1,9 @@
-package com.espringjpa.domain;
+package com.springjpa.domain;
 
 //import java.util.Vector;
 
 import java.util.Date;
 import java.util.List;
-import java.util.Vector;
 
 import javax.persistence.*;
 
@@ -38,6 +37,12 @@ public class PlayList extends SongList {
 	
 	public void setName(String name ){
 		this.name=name;
+	}
+	public long getId(){
+		return id;
+	}
+	public void setId(Long id){
+		this.id=id;
 	}
 	public Date getCreationDate(){
 		return creationDate;
