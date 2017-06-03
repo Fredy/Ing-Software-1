@@ -1,5 +1,6 @@
 package com.springjpa.domain;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.net.URL;
 /*
@@ -20,7 +21,9 @@ public class Song {
 	@Column (name ="name")
 	private String name;
 	private boolean active;
-	private int avgRating;
+	private float avgRating;
+	private long sumRatings; /// We need sumRating for calculate avgRating -> avgRating = (sum(ratings)/timesRating)
+	private int timesRating; /// We need timesRating for calculate avgRating -> avgRating = (sum(ratings)/timesRating)
 	private long timesPlayed;
 	
 	@ManyToMany(mappedBy="songs")
@@ -31,8 +34,10 @@ public class Song {
 	public Song(String name){
 	    this.name = name;
         active = true;
-        avgRating = 0;
+        avgRating = 0f;
+        timesRating = 0;
         timesPlayed = 0;
+        albums = new ArrayList<Album>();
     }
 	
 	public Integer getId() {
@@ -43,12 +48,11 @@ public class Song {
         this.id = id;
     }
 	
-	public boolean updateTimesPlayed(){
-		//do something
-		return true;
+	public void updateTimesPlayed(){
+		timesPlayed++;
 	}
 	public boolean updateAvgRating(){
-		//do something
+		avgRating = sumRatings / timesRating;
 		return true;
 	}
 	public void activate(){
@@ -74,7 +78,7 @@ public class Song {
 		this.active = active;
 	}
 
-	public int getAvgRating() {
+	public float getAvgRating() {
 		return avgRating;
 	}
 

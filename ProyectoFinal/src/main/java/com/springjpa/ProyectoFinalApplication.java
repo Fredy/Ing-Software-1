@@ -48,6 +48,11 @@ public class ProyectoFinalApplication {
 //		pl1.setId(System.currentTimeMillis());
 //		playListRepository.save(pl1);
 //	}
+    @PostConstruct
+    void init(){
+        Song s1 = new Song("alguna cancion");
+        songRepository.save(s1);
+    }
 
 	@RequestMapping("/playLists")
 	@ResponseBody
