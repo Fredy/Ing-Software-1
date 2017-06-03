@@ -7,7 +7,6 @@ import javax.persistence.*;
 @Entity
 @Table(name = "user_table")
 public class User extends Person {
-	// TODO: uncomment the '@' when everything is implemented...
     @Id
     private Long id;
 
