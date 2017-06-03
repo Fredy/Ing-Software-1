@@ -8,6 +8,7 @@ import javax.persistence.*;
 public abstract class Person {
 
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 
 	protected String name;
@@ -16,7 +17,19 @@ public abstract class Person {
 	protected String password;
 	protected Date signedInDate;
 	protected boolean active;
-	
+
+	public Person(String name, boolean gender, String userName,
+				  String password, Date signedInDate) {
+		this.name = name;
+		this.gender = gender;
+		this.userName = userName;
+		this.password = password;
+		this.signedInDate = signedInDate;
+		this.active = true;
+	}
+
+	public Person() { }
+
 	public String getName() {
 		return this.name;
 	}

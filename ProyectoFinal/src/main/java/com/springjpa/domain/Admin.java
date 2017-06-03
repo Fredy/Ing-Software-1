@@ -1,12 +1,15 @@
 package com.springjpa.domain;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
+@PrimaryKeyJoinColumn(referencedColumnName="id")
 public class Admin extends Person{
 
-    @Id
-    private Long id;
+    public Admin(String name, boolean gender, String userName, String password, Date signedInDate) {
+        super(name, gender, userName, password, signedInDate);
+    }
 
     void activateUser(User targetUser) {
 
