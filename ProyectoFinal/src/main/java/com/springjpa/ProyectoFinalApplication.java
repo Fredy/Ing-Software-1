@@ -4,6 +4,8 @@ import java.util.Collection;
 
 import javax.annotation.PostConstruct;
 
+import com.springjpa.domain.Song;
+import com.springjpa.repository.SongRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -25,6 +27,9 @@ public class ProyectoFinalApplication {
 	
 	@Autowired
 	PlayListRepository playListRepository;
+
+	@Autowired
+    SongRepository songRepository;
 	
 //	@PostConstruct
 //	void init() {
@@ -33,6 +38,19 @@ public class ProyectoFinalApplication {
 //		pl1.setId(System.currentTimeMillis());
 //		playListRepository.save(pl1);
 //	}
+    @PostConstruct
+    void init(){
+
+        Song s1 = new Song("el pio pio");
+        songRepository.save(s1);
+
+    }
+
+    @RequestMapping("/songs")
+    @ResponseBody
+    Collection<Song> ShowSongs() {
+        return songRepository.findAll();
+    }
 
 	@RequestMapping("/playLists")
 	@ResponseBody

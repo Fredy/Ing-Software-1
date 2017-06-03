@@ -32,6 +32,7 @@ public class User extends Person {
         inverseJoinColumns={ @JoinColumn(name="PlayListID", referencedColumnName="id", unique=true) }
     )
     private List<PlayList> playlists;
+
     @ManyToMany(mappedBy="followers")
     private List<PlayList> followedPlaylists;
 /*

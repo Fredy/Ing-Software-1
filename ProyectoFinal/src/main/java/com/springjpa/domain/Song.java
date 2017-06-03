@@ -15,6 +15,7 @@ import javax.persistence.*;
 public class Song {
 	
 	@Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id; //NOTE: I think "URL file" might be a possible id
 	@Column (name ="name")
 	private String name;
@@ -26,10 +27,21 @@ public class Song {
 	private List<Album> albums;
 
 	private URL file;
+
+	public Song(String name){
+	    this.name = name;
+        active = true;
+        avgRating = 0;
+        timesPlayed = 0;
+    }
 	
 	public Integer getId() {
 		return id;
 	}
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 	
 	public boolean updateTimesPlayed(){
 		//do something
@@ -49,6 +61,10 @@ public class Song {
 	public String getName() {
 		return name;
 	}
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
 	public boolean isActive() {
 		return active;
