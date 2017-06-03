@@ -26,13 +26,13 @@ public class ProyectoFinalApplication {
 	@Autowired
 	PlayListRepository playListRepository;
 	
-	@PostConstruct
-	void init() {
-		PlayList pl1 = new PlayList();
-		pl1.setName("001");
-		pl1.setId(System.currentTimeMillis());
-		playListRepository.save(pl1);
-	}
+//	@PostConstruct
+//	void init() {
+//		PlayList pl1 = new PlayList();
+//		pl1.setName("001");
+//		pl1.setId(System.currentTimeMillis());
+//		playListRepository.save(pl1);
+//	}
 
 	@RequestMapping("/playLists")
 	@ResponseBody
