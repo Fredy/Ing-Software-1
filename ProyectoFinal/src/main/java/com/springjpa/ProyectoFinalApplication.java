@@ -4,14 +4,18 @@ import java.util.Collection;
 
 import javax.annotation.PostConstruct;
 
-import com.springjpa.domain.Song;
-import com.springjpa.repository.SongRepository;
+import com.springjpa.domain.Album;
+import com.springjpa.domain.Artist;
+import com.springjpa.repository.AlbumRepository;
+import com.springjpa.repository.ArtistRepository;
+import com.sun.org.apache.xalan.internal.xsltc.dom.AdaptiveResultTreeImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.springjpa.domain.PlayList;
@@ -29,7 +33,10 @@ public class ProyectoFinalApplication {
 	PlayListRepository playListRepository;
 
 	@Autowired
-    SongRepository songRepository;
+	AlbumRepository albumRepository;
+
+	@Autowired
+	ArtistRepository artistRepository;
 	
 //	@PostConstruct
 //	void init() {
@@ -38,24 +45,29 @@ public class ProyectoFinalApplication {
 //		pl1.setId(System.currentTimeMillis());
 //		playListRepository.save(pl1);
 //	}
-    @PostConstruct
-    void init(){
-
-        Song s1 = new Song("el pio pio");
-        songRepository.save(s1);
-
-    }
-
-    @RequestMapping("/songs")
-    @ResponseBody
-    Collection<Song> ShowSongs() {
-        return songRepository.findAll();
-    }
 
 	@RequestMapping("/playLists")
 	@ResponseBody
 	Collection<PlayList> listarPlayLists() {
 		return playListRepository.findAll();
+	}
+
+	@RequestMapping("/artists")
+	@ResponseBody
+	Collection<Artist> listarArtists(){
+		return artistRepository.findAll();
+	}
+
+	@RequestMapping("/albums")
+	@ResponseBody
+	Collection<Album> listarAlbums(){
+		return albumRepository.findAll();
+	}
+
+	@RequestMapping("/giveArtists")
+	@ResponseBody
+	Collection<Artist> giveArtists(@RequestParam String idOfAlbum){
+		return albumRepository.getArtists(Long.parseLong(idOfAlbum));
 	}
 
 	public static void main(String[] args) {
