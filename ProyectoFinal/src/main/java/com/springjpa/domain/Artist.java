@@ -1,5 +1,11 @@
 package com.springjpa.domain;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
 import javax.persistence.*;
@@ -7,6 +13,8 @@ import javax.persistence.*;
  * Created by mathHellscream
  */
 
+@JsonIdentityInfo(generator=ObjectIdGenerators.IntSequenceGenerator.class)
+@JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY, getterVisibility = JsonAutoDetect.Visibility.NONE, setterVisibility = JsonAutoDetect.Visibility.NONE)
 @Entity
 @Table(name = "Artist")
 public class Artist {
@@ -18,7 +26,7 @@ public class Artist {
     private boolean active;
 
 
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
     @JoinTable(
             name = "ArtistAlbum",
             joinColumns = @JoinColumn(name = "ArtistId", referencedColumnName = "id"),
@@ -35,6 +43,12 @@ public class Artist {
     private List<User> followedBy;
 
     //Methods
+
+    public Artist(){
+        albums = new ArrayList<Album>();
+        followedBy = new ArrayList<User>();
+    }
+
     public long getId() {
         return id;
     }
