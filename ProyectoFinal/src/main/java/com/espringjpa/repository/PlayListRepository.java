@@ -1,35 +1,19 @@
 package com.espringjpa.repository;
 
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
 
-//import org.springframework.stereotype.Component;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.CrudRepository;
 
 import com.espringjpa.domain.PlayList;
 
 //@Component
-public class PlayListRepository implements IPlaylistRepository{
+public interface PlayListRepository extends CrudRepository<PlayList, Long>{
 	
-	Map<String, PlayList> playLists = new HashMap<>();
+    @Query("SELECT a FROM PlayList a WHERE a.id = ?1")
+    PlayList findOne(long id);
 
-
-	@Override
-	public void save(PlayList playList){
-		playLists.put(playList.getName(), playList);
-	}
-	@Override
-	public PlayList get(String name) {
-		return playLists.get(name);
-	}
-
-	@Override
-	public Collection<PlayList> getAll() {
-		return playLists.values();
-	}
-	@Override
-	public void remove(String name) {
-		playLists.remove(name);
-	}
-
+    // select a.* from account a
+    @Query("SELECT a FROM PlayList a")
+    Collection<PlayList> findAll();
 }
