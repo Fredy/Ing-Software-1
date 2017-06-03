@@ -1,5 +1,10 @@
 package com.springjpa.domain;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Vector;
 import javax.persistence.*;
@@ -7,6 +12,7 @@ import javax.persistence.*;
 /**
  * Created by mathHellscream
  */
+@JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY, getterVisibility = JsonAutoDetect.Visibility.NONE, setterVisibility = JsonAutoDetect.Visibility.NONE)
 @Entity
 @Table(name = "Album")
 public class Album {
@@ -29,6 +35,10 @@ public class Album {
     private List<Artist> artists;
 
     //Methods
+    public Album(){
+        songs = new ArrayList<Song>();
+        artists = new ArrayList<Artist>();
+    }
     public long getId() {
         return id;
     }

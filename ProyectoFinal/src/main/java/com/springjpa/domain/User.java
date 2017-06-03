@@ -1,4 +1,5 @@
 package com.springjpa.domain;
+import java.util.Date;
 import java.util.List;
 import java.util.Vector;
 
@@ -6,12 +7,11 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "user_table")
+@PrimaryKeyJoinColumn(referencedColumnName="id")
 public class User extends Person {
-    @Id
-    private Long id;
-
     @OneToOne
     private Timeline timeline; // It could conflict with timeline from javafx...
+
     @ManyToMany(mappedBy="followedBy")
     private List<Artist> followedArtists;
 
@@ -35,26 +35,18 @@ public class User extends Person {
 
     @ManyToMany(mappedBy="followers")
     private List<PlayList> followedPlaylists;
+
+    public User(String name, boolean gender, String userName,
+                String password, Date signedInDate, Timeline timeline) {
+        super(name, gender, userName, password, signedInDate);
+        this.timeline = timeline;
+    }
 /*
     public Timeline getTimeline() {
         return timeline;
     }
 
-    public Vector<Artist> getFollowedArtists() {
-        return followedArtists;
-    }
 
-    public Vector<User> getFollowedUsers() {
-        return followedUsers;
-    }
-
-    public Vector<PlayList> getPlaylists() {
-        return playlists;
-    }
-
-    public Vector<PlayList> getFollowedPlaylists() {
-        return followedPlaylists;
-    }
 
     void followUser(User targetUser) {
         // TODO: Verify: if this already follows a User -> do nothing, else add it; or this is part of the db?.

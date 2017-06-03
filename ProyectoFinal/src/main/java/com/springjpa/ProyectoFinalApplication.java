@@ -4,9 +4,7 @@ import java.util.Collection;
 
 import javax.annotation.PostConstruct;
 
-import com.springjpa.domain.Album;
-import com.springjpa.domain.Artist;
-import com.springjpa.domain.Song;
+import com.springjpa.domain.*;
 import com.springjpa.repository.*;
 import com.sun.org.apache.xalan.internal.xsltc.dom.AdaptiveResultTreeImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,8 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-
-import com.springjpa.domain.PlayList;
 
 @Controller
 @SpringBootApplication
@@ -39,6 +35,8 @@ public class ProyectoFinalApplication {
     @Autowired
 	SongRepository songRepository;
 
+    @Autowired
+	UserRepository userRepository;
 
 	
 //	@PostConstruct
@@ -83,6 +81,12 @@ public class ProyectoFinalApplication {
     Collection<Song> showSongs(){
 	    return songRepository.findAll();
     }
+
+	@RequestMapping("/users")
+	@ResponseBody
+	Collection<User> showUsers(){
+		return userRepository.findAll();
+	}
 
 	public static void main(String[] args) {
 		SpringApplication.run(ProyectoFinalApplication.class, args);
