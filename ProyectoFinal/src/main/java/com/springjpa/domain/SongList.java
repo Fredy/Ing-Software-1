@@ -13,8 +13,8 @@ public abstract class SongList {
     }
 	
 	public void addAlbum (Album newAlbum){
-        //songList.add(newSong); agregar cancion por cancion
-    }
+        songList.addAll(newAlbum.getSongs());
+	}
 
     public void removeSong (Song songToDelete){
         songList.remove(songToDelete);

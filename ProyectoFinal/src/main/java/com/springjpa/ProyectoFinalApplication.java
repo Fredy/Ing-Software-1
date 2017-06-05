@@ -42,8 +42,7 @@ public class ProyectoFinalApplication {
 //	@PostConstruct
 //	void init() {
 //		PlayList pl1 = new PlayList();
-//		pl1.setName("001");
-//		pl1.setId(System.currentTimeMillis());
+//		pl1.setName("PlayList1");
 //		playListRepository.save(pl1);
 //	}
     @PostConstruct
@@ -54,7 +53,7 @@ public class ProyectoFinalApplication {
 
 	@RequestMapping("/playLists")
 	@ResponseBody
-	Collection<PlayList> listarPlayLists() {
+	Collection<PlayList> showPlayLists() {
 		return playListRepository.findAll();
 	}
 
