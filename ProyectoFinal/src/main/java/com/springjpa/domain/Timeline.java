@@ -16,7 +16,6 @@ public class Timeline {
     private List<Played> songsPlayed;
     
     @OneToOne(mappedBy="timeline")
-	@JoinColumn(name="owner")
     private User owner;
 
     public boolean show(){

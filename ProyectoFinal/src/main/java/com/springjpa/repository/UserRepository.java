@@ -22,8 +22,9 @@ public interface UserRepository extends CrudRepository<User, Long>{
     // TODO: remove this!
     @Query("SELECT p FROM User p")
     Collection<User> findAll();
-
+    
     // TODO: change collection with Iterator
+    // TODO: CHECK THIS QUERIES!!!
     //Followed Artists:
     @Query("SELECT f FROM  Artist a JOIN a.followedBy f where f.id = ?1")
     Collection<Artist> getFollowedArtists(long id);
@@ -32,15 +33,13 @@ public interface UserRepository extends CrudRepository<User, Long>{
     @Query("SELECT f FROM  User u JOIN u.followedUsers f where f.id = ?1")
     Collection<User> getFollowedUsers(long id);
 
-    //ERROR: playlist is not mapped ???
     //Followed Playlists:
-    //@Query("SELECT f FROM  Playlist p JOIN p.followers f where f.id = ?1")
-    //Collection<PlayList> getFollowedPlaylists(long id);
+    @Query("SELECT f FROM  PlayList p JOIN p.followers f where f.id = ?1")
+    Collection<PlayList> getFollowedPlaylists(long id);
 
-    /*
+/*
     //Get own playlists
-    @Query("SELECT f FROM  Playlist p JOIN p.followers f where f.id = ?1")
+    @Query("SELECT p FROM Playlist p JOIN p.user u where u.id = ?1")
     Collection<PlayList> getPlaylists();
 */
-
 }

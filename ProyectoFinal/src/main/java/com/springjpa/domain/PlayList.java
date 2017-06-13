@@ -34,7 +34,11 @@ public class PlayList extends SongList {
             joinColumns = @JoinColumn(name = "PlayListID", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name="UserID", referencedColumnName = "id"))
 	private List<User> followers;
-	
+
+	@ManyToOne
+	@JoinColumn(name = "user_id")
+	private User user;
+
 	public PlayList(){
 		songList = new ArrayList<Song>();
 		followers= new ArrayList<User>();

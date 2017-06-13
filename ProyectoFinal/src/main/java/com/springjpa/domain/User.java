@@ -10,13 +10,14 @@ import javax.persistence.*;
 @PrimaryKeyJoinColumn(referencedColumnName="id")
 public class User extends Person {
     @OneToOne
+    @JoinColumn(name="timeline_id")
     private Timeline timeline; // It could conflict with timeline from javafx...
 
     @ManyToMany(mappedBy="followedBy")
     private List<Artist> followedArtists;
 
     @ManyToMany
-    @JoinTable(
+    @JoinTable (
             name = "UserUser",
             joinColumns = @JoinColumn(name = "UserID1", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name="UserID2", referencedColumnName = "id")
@@ -24,13 +25,7 @@ public class User extends Person {
     private List<User> followedUsers;
     
     
-    @OneToMany
-    @JoinTable
-    (
-        name="UserPlaylists",
-        joinColumns={ @JoinColumn(name="UserID", referencedColumnName="id") },
-        inverseJoinColumns={ @JoinColumn(name="PlayListID", referencedColumnName="id", unique=true) }
-    )
+    @OneToMany(mappedBy = "user")
     private List<PlayList> playlists;
 
     @ManyToMany(mappedBy="followers")

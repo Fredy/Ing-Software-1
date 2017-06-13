@@ -9,7 +9,7 @@ public abstract class Person {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Long id;
+	protected Long id;
 
 	protected String name;
 	protected boolean gender;
