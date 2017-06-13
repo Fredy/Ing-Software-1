@@ -1,6 +1,9 @@
 package com.springjpa;
 
+import java.sql.Time;
+import java.time.Instant;
 import java.util.Collection;
+import java.util.Date;
 
 import javax.annotation.PostConstruct;
 
@@ -22,7 +25,7 @@ public class ProyectoFinalApplication {
 
 	@Autowired
 	TimelineRepository timelineRepository;
-	
+
 	@Autowired
 	PlayListRepository playListRepository;
 
@@ -38,18 +41,27 @@ public class ProyectoFinalApplication {
     @Autowired
 	UserRepository userRepository;
 
-	
-//	@PostConstruct
-//	void init() {
-//		PlayList pl1 = new PlayList();
-//		pl1.setName("PlayList1");
-//		playListRepository.save(pl1);
-//	}
+
+
+//@PostConstruct
+//    void init(){
+//        Song s1 = new Song("alguna cancion");
+//        songRepository.save(s1);
+//    }
+
     @PostConstruct
-    void init(){
-        Song s1 = new Song("alguna cancion");
-        songRepository.save(s1);
-    }
+    void init() {
+        Timeline tml1 = new Timeline();
+        timelineRepository.save(tml1);
+        User usr1 = new User("Pepito Arce", true, "pp32",
+                             "hola", Date.from(Instant.EPOCH),tml1);
+        userRepository.save(usr1);
+
+		PlayList pl1 = new PlayList("001", usr1);
+		playListRepository.save(pl1);
+
+	}
+
 
 	@RequestMapping("/playLists")
 	@ResponseBody

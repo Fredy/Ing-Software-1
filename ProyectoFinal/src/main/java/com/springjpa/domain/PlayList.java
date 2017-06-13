@@ -39,7 +39,13 @@ public class PlayList extends SongList {
 	@JoinColumn(name = "user_id")
 	private User user;
 
-	public PlayList(){
+	public PlayList() {
+		songList = new ArrayList<Song>();
+		followers= new ArrayList<User>();
+	}
+	public PlayList(String name,User user) {
+		this.name = name;
+		this.user = user;
 		songList = new ArrayList<Song>();
 		followers= new ArrayList<User>();
 	}
