@@ -1,0 +1,99 @@
+@charset "utf-8";
+/* CSS Document */
+/* Colores */
+
+/* Neutralidad */
+*{
+	margin:0px;
+	padding:0px;
+	font-family:"Comic Sans MS", cursive;
+}
+/* Etiquetas */
+header{
+	position:relative;
+	width:100%;
+	height:90px;
+	background-color:#242426;
+}
+section{
+	position:relative;
+	width:100%;
+	height:380px;
+	background-color:#4C4C4F;
+}
+footer{
+	position:relative;
+	float:left
+	width:100%;
+	height:25px;
+	background-color:#111112;
+}
+a{
+	color:black;
+	text-decoration:none;
+}
+a:hover{
+	color:black;
+	text-decoration:none;
+}
+/* Identificadores */
+#logo{
+	position:relative;
+	float:left;
+	width:150px;
+	height:90px;
+	background-image:url(../img/espoti_five.png);
+	background-size:contain;
+}
+#search{
+	width:100%;
+	height:40px;
+	position:relative;
+	background-color:#242426;
+}
+#player{
+	width:100%;
+	height:90px;
+	position:relative;
+	background-color:#242426;
+}
+#userIcon{
+	position:relative;
+	width:200px;
+	height:130px;
+	padding:15px;
+	margin-top : 50px;
+	background-color:#7F7F84;
+}
+
+#menuindex{
+	position:relative;
+	float:left;
+	width:230px;
+	height:380px;
+	padding:15px;
+	margin:0 auto;
+	background-color:#303033;
+}
+
+#menuindex ul{
+	position:relative;
+	list-style-type:none;
+	margin:0 auto;
+}
+#menuindex ul li{
+	margin-right:6px;
+	margin-left:6px;
+	margin-top:7px;
+	margin-bottom:10px;
+	background-color:#7F7F84;
+	position:relative;
+	padding:5px;
+	text-align: center;
+	font-size:20px;
+	border-radius: 15px;
+}
+
+
+
+/* Clases */
