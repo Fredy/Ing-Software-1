@@ -1,6 +1,11 @@
 @charset "utf-8";
 /* CSS Document */
 /* Colores */
+/* #242426 */
+/* #4C4C4F */
+/* #111112 */
+/* #303033 */
+/* #7F7F84 */
 
 /* Neutralidad */
 *{
@@ -93,7 +98,5 @@ a:hover{
 	font-size:20px;
 	border-radius: 15px;
 }
-
-
 
 /* Clases */
