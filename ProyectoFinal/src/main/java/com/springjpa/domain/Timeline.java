@@ -1,5 +1,6 @@
 package com.springjpa.domain;
 import java.util.List;
+import java.util.Vector;
 
 import javax.persistence.*;
 
@@ -18,6 +19,15 @@ public class Timeline {
     
     @OneToOne(mappedBy="timeline")
     private User owner;
+
+    public Timeline(User owner){
+    	this.owner = owner;
+    	this.songsPlayed =  new Vector<Played>();
+	}
+
+	public Timeline(){
+		this.songsPlayed =  new Vector<Played>();
+	}
 
     public boolean show(){
 		//do something

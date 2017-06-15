@@ -20,10 +20,14 @@ public class Played {
 	private User userWhoPlayed;
 	private Date datePlayed;
 
-	Played(User u,Song sp){
-        userWhoPlayed = u;
-        songPlayed = sp;
+	public Played(User u,Song sp){
+        this.userWhoPlayed = u;
+        this.songPlayed = sp;
         datePlayed = new Date();
+    }
+
+    public Played(){
+
     }
 	
 	public boolean updateTimesPlayed(Song song, User user){
