@@ -26,20 +26,19 @@ public interface UserRepository extends CrudRepository<User, Long>{
     // TODO: change collection with Iterator
     // TODO: CHECK THIS QUERIES!!!
     //Followed Artists:
-    @Query("SELECT f FROM  Artist a JOIN a.followedBy f where f.id = ?1")
+    @Query("SELECT a FROM  Artist a JOIN a.followedBy f where f.id = ?1")
     Collection<Artist> getFollowedArtists(long id);
-
+    //select b.fname, b.lname from Users b JOIN b.groups c where c.groupName = :groupName
     //Followed Users:
-    @Query("SELECT f FROM  User u JOIN u.followedUsers f where f.id = ?1")
+    @Query("SELECT u FROM  User u JOIN u.followedUsers f where f.id = ?1")
     Collection<User> getFollowedUsers(long id);
 
     //Followed Playlists:
-    @Query("SELECT f FROM  PlayList p JOIN p.followers f where f.id = ?1")
+    @Query("SELECT p FROM  PlayList p JOIN p.followers f where f.id = ?1")
     Collection<PlayList> getFollowedPlaylists(long id);
 
-/*
+
     //Get own playlists
-    @Query("SELECT p FROM Playlist p JOIN p.user u where u.id = ?1")
-    Collection<PlayList> getPlaylists();
-*/
+    @Query("SELECT p FROM PlayList p JOIN p.user u where u.id = ?1" )
+    Collection<PlayList> getPlaylists(long id);
 }
