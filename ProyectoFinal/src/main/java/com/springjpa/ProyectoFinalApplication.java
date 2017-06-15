@@ -94,7 +94,6 @@ public class ProyectoFinalApplication {
 		playedRepository.save(p1);
 
 		tml1.addSongPlayed(p1);
-
 	}
 
 
@@ -149,11 +148,18 @@ public class ProyectoFinalApplication {
     }
 
 
+    @RequestMapping("/timelines")
+    @ResponseBody
+    Collection<Timeline> showTimelines(){
+        return timelineRepository.findAll();
+    }
+
 	@RequestMapping("/getTimeline")
 	@ResponseBody
-	Collection<Played> showTimeline(@RequestParam Long idTimeline){
-		return timelineRepository.getSongsPlayed(idTimeline);
+    Collection<Played> showTimeline(@RequestParam Long idT){
+		return timelineRepository.getSongsPlayed(idT);
 	}
+
 
     @RequestMapping("/ufollowed")
     @ResponseBody
