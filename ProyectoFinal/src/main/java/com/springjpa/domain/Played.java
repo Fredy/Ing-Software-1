@@ -1,4 +1,7 @@
 package com.springjpa.domain;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.util.Calendar;
 import java.util.Date;
 import javax.persistence.*;
 @Entity
@@ -7,13 +10,21 @@ public class Played {
 	
 	@Id
 	private long id;
+
 	@ManyToOne
 	@JoinColumn(name="TimelineOwner")
 	private Song songPlayed;
+
 	@ManyToOne
 	@JoinColumn(name="UserWhoPlayed")
-	private User UserWhoPlayed;
+	private User userWhoPlayed;
 	private Date datePlayed;
+
+	Played(User u,Song sp){
+        userWhoPlayed = u;
+        songPlayed = sp;
+        datePlayed = new Date();
+    }
 	
 	public boolean updateTimesPlayed(Song song, User user){
 		//do something
@@ -28,11 +39,11 @@ public class Played {
 	}
 	
 	public User getUserWhoPlayed() {
-	    return UserWhoPlayed;
+	    return userWhoPlayed;
 	}
 
 	public void setUserWhoPlayed(User userWhoPlayed) {
-	    UserWhoPlayed = userWhoPlayed;
+	    userWhoPlayed = userWhoPlayed;
 	}
 
 	public Date getDatePlayed() {
