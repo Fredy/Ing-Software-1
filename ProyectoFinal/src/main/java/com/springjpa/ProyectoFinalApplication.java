@@ -51,6 +51,28 @@ public class ProyectoFinalApplication {
 
     @PostConstruct
     void init() {
+        // USER
+        for (int i = 1 ; i<= 10; i++) {
+            Timeline tml = new Timeline();
+            timelineRepository.save(tml);
+            User usr = new User("USER_" + Integer.toString(i), true,
+                    "USRNAME_" + Integer.toString(i),
+                    "PSWRD_" + Integer.toString(i), Date.from(Instant.EPOCH),tml);
+
+
+            Timeline tml1 = new Timeline();
+            timelineRepository.save(tml1);
+            User usr1 = new User("USER_2" + Integer.toString(i), true,
+                    "USRNAME_2" + Integer.toString(i),
+                    "PSWRD_2" + Integer.toString(i), Date.from(Instant.EPOCH),tml1);
+            userRepository.save(usr1);
+
+           usr.getFollowedUsers().add(usr1);
+            userRepository.save(usr);
+           //userRepository.save(usr);
+
+
+        }
         Timeline tml1 = new Timeline();
         timelineRepository.save(tml1);
         User usr1 = new User("Pepito Arce", true, "pp32",
@@ -98,6 +120,18 @@ public class ProyectoFinalApplication {
 	Collection<User> showUsers(){
 		return userRepository.findAll();
 	}
+
+    @RequestMapping("/usera")
+    @ResponseBody
+    User showUser(@RequestParam Long id){
+        return userRepository.findOne(id);
+    }
+
+    @RequestMapping("/ufollowed")
+    @ResponseBody
+    Collection<User> showUFollowed(@RequestParam Long id){
+        return userRepository.getFollowedUsers(id);
+    }
 
 	public static void main(String[] args) {
 		SpringApplication.run(ProyectoFinalApplication.class, args);

@@ -14,10 +14,10 @@ public interface UserRepository extends CrudRepository<User, Long>{
     // Sets the active boolean to true or false.
 
     @Query("UPDATE User SET active = TRUE WHERE id = ?1")
-    void active(long id);
+    void active(Long id);
 
     @Query("UPDATE User SET active = FALSE WHERE id = ?1")
-    void deactive(long id);
+    void deactive(Long id);
 
     // TODO: remove this!
     @Query("SELECT p FROM User p")
@@ -27,18 +27,18 @@ public interface UserRepository extends CrudRepository<User, Long>{
     // TODO: CHECK THIS QUERIES!!!
     //Followed Artists:
     @Query("SELECT a FROM  Artist a JOIN a.followedBy f where f.id = ?1")
-    Collection<Artist> getFollowedArtists(long id);
+    Collection<Artist> getFollowedArtists(Long id);
     //select b.fname, b.lname from Users b JOIN b.groups c where c.groupName = :groupName
     //Followed Users:
     @Query("SELECT u FROM  User u JOIN u.followedUsers f where f.id = ?1")
-    Collection<User> getFollowedUsers(long id);
+    Collection<User> getFollowedUsers(Long id);
 
     //Followed Playlists:
     @Query("SELECT p FROM  PlayList p JOIN p.followers f where f.id = ?1")
-    Collection<PlayList> getFollowedPlaylists(long id);
+    Collection<PlayList> getFollowedPlaylists(Long id);
 
 
     //Get own playlists
     @Query("SELECT p FROM PlayList p JOIN p.user u where u.id = ?1" )
-    Collection<PlayList> getPlaylists(long id);
+    Collection<PlayList> getPlaylists(Long id);
 }

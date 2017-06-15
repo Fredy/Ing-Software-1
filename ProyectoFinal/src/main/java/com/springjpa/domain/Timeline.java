@@ -9,6 +9,7 @@ public class Timeline {
 	
 	@Id
 	@Column(name = "idTimeline")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
     private long id;
 	
 	@OneToMany

@@ -1,4 +1,5 @@
 package com.springjpa.domain;
+
 import java.util.Date;
 import java.util.List;
 import java.util.Vector;
@@ -15,6 +16,10 @@ public class User extends Person {
 
     @ManyToMany(mappedBy="followedBy")
     private List<Artist> followedArtists;
+
+    public List<User> getFollowedUsers() {
+        return followedUsers;
+    }
 
     @ManyToMany
     @JoinTable (
@@ -35,6 +40,16 @@ public class User extends Person {
                 String password, Date signedInDate, Timeline timeline) {
         super(name, gender, userName, password, signedInDate);
         this.timeline = timeline;
+        this.followedArtists = new Vector<Artist>();
+        this.followedPlaylists = new  Vector<PlayList>();
+        this.followedUsers = new Vector<User>();
+    }
+
+    public User() {
+        this.followedArtists = new Vector<Artist>();
+        this.followedPlaylists = new  Vector<PlayList>();
+        this.followedUsers = new Vector<User>();
+
     }
 /*
     public Timeline getTimeline() {
