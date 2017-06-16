@@ -16,7 +16,7 @@ public interface ArtistRepository extends CrudRepository<Artist,Long> {
     Artist findOne(Long id);
 
     @Query("SELECT a.name from Artist a where a.id=?1")
-    Collection<String> findNameById(Long id1);
+    String findNameById(Long id1);
 
     @Query("SELECT a.id from Artist a where a.name=?1")
     Collection<Long> findbyName(String name);
