@@ -141,13 +141,13 @@ public class ProyectoFinalApplication {
 	Collection<Song> showSongs(){
 		return songRepository.findAll();
 	}
-    */
+
 	@RequestMapping("/playeds")
 	@ResponseBody
 	Collection<Played> showPlayeds(){
 		return playedRepository.findAll();
 	}
-
+    */
 	@RequestMapping("/users")
 	@ResponseBody
 	Collection<User> showUsers(){

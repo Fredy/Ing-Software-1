@@ -5,6 +5,7 @@ import com.springjpa.service.PlayedService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.Collection;
 
@@ -18,6 +19,7 @@ public class PlayedController {
     PlayedService playedService;
 
     @RequestMapping("/playeds")
+    @ResponseBody
     public Collection<Played> showAllPlayed(){
         return playedService.findAll();
     }
