@@ -75,7 +75,6 @@ public class ProyectoFinalApplication {
 
             usr.getFollowedUsers().add(usr1);
             userRepository.save(usr);
-
             usr1.getFollowedUsers().add(usr);
             userRepository.save(usr1);
         }
