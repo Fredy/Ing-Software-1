@@ -82,6 +82,7 @@ public class ProyectoFinalApplication {
         }
 
         Timeline tml1 = new Timeline();
+
         timelineRepository.save(tml1);
         User usr1 = new User("Pepito Arce", "esdsd@sdsd.com",true, "pp32",
                              "hola", Date.from(Instant.EPOCH),tml1);
@@ -94,10 +95,15 @@ public class ProyectoFinalApplication {
 		Song s1 = new Song("macarena");
 		songRepository.save(s1);
 
-		Played p1 = new Played(usr1,s1);
+        Song s2 = new Song("baila");
+        songRepository.save(s2);
+
+
+        Played p1 = new Played(usr1,s1);
 		playedRepository.save(p1);
 
 		tml1.addSongPlayed(p1);
+		timelineRepository.save(tml1);
 	}
 
 
@@ -131,8 +137,8 @@ public class ProyectoFinalApplication {
 	@ResponseBody
 	Collection<Song> showSongs(){
 		return songRepository.findAll();
-	}
-    */
+	}*/
+
 	@RequestMapping("/playeds")
 	@ResponseBody
 	Collection<Played> showPlayeds(){
