@@ -20,10 +20,16 @@ public interface AlbumRepository extends CrudRepository<Album,Long>{
     Collection<Long> findByName(String name);
 
     @Query("select a.name from Album a where a.id = ?1")
-    Collection<String> findNamebyId(Long id);
+    String findNamebyId(Long id);
 
     @Query("select a from Album a")
     Collection<Album> findAll();
+
+    @Query("select a.name from Album a")
+    Collection<String> findAllName();
+
+    @Query("select a.id from Album a")
+    Collection<Long> findAllId();
 
     @Query("update Album a set a.active=TRUE")
     void active();

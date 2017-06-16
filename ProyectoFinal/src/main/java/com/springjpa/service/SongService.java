@@ -16,8 +16,8 @@ public class SongService {
     @Autowired
     SongRepository songRepository;
 
-    public Boolean findSong(String songName){
-        if (songRepository.findByName(songName) != null)
+    public Boolean isANewSong(String songName){
+        if (songRepository.findByName(songName) == null)
             return Boolean.TRUE;
         return Boolean.FALSE;
     }
