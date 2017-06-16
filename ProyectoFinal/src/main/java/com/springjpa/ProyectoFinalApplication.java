@@ -41,6 +41,8 @@ public class ProyectoFinalApplication {
     @Autowired
 	UserRepository userRepository;
 
+	@Autowired
+	PlayedRepository playedRepository;
 
 
 //@PostConstruct
@@ -51,28 +53,33 @@ public class ProyectoFinalApplication {
 
     @PostConstruct
     void init() {
-        // USER
+
+
+    	// USER
         for (int i = 1 ; i<= 10; i++) {
             Timeline tml = new Timeline();
+
             timelineRepository.save(tml);
             User usr = new User("USER_" + Integer.toString(i), true,
                     "USRNAME_" + Integer.toString(i),
                     "PSWRD_" + Integer.toString(i), Date.from(Instant.EPOCH),tml);
-
+            userRepository.save(usr);
 
             Timeline tml1 = new Timeline();
             timelineRepository.save(tml1);
+
             User usr1 = new User("USER_2" + Integer.toString(i), true,
                     "USRNAME_2" + Integer.toString(i),
                     "PSWRD_2" + Integer.toString(i), Date.from(Instant.EPOCH),tml1);
             userRepository.save(usr1);
 
-           usr.getFollowedUsers().add(usr1);
+            usr.getFollowedUsers().add(usr1);
             userRepository.save(usr);
-           //userRepository.save(usr);
 
-
+            usr1.getFollowedUsers().add(usr);
+            userRepository.save(usr1);
         }
+
         Timeline tml1 = new Timeline();
         timelineRepository.save(tml1);
         User usr1 = new User("Pepito Arce", true, "pp32",
@@ -81,8 +88,17 @@ public class ProyectoFinalApplication {
 
 		PlayList pl1 = new PlayList("001", usr1);
 		playListRepository.save(pl1);
+		//SONGS
 
+		Song s1 = new Song("macarena");
+		songRepository.save(s1);
+
+		Played p1 = new Played(usr1,s1);
+		playedRepository.save(p1);
+
+		tml1.addSongPlayed(p1);
 	}
+
 
 
 	@RequestMapping("/playLists")
@@ -109,11 +125,18 @@ public class ProyectoFinalApplication {
 		return albumRepository.getArtists(Long.parseLong(idOfAlbum));
 	}
 
+
 	@RequestMapping("/songs")
-    @ResponseBody
-    Collection<Song> showSongs(){
-	    return songRepository.findAll();
-    }
+	@ResponseBody
+	Collection<Song> showSongs(){
+		return songRepository.findAll();
+	}
+
+	@RequestMapping("/playeds")
+	@ResponseBody
+	Collection<Played> showPlayeds(){
+		return playedRepository.findAll();
+	}
 
 	@RequestMapping("/users")
 	@ResponseBody
@@ -126,6 +149,18 @@ public class ProyectoFinalApplication {
     User showUser(@RequestParam Long id){
         return userRepository.findOne(id);
     }
+
+    @RequestMapping("/timelines")
+    @ResponseBody
+    Collection<Timeline> showTimelines(){
+        return timelineRepository.findAll();
+    }
+
+	@RequestMapping("/getTimeline")
+	@ResponseBody
+    Collection<Played> showTimeline(@RequestParam Long idT){
+		return timelineRepository.getSongsPlayed(idT);
+	}
 
     @RequestMapping("/ufollowed")
     @ResponseBody

@@ -18,6 +18,7 @@ import javax.persistence.*;
 public class Album {
     //Attributes
     @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private long id;
     @Column (name = "name")
     private String name;

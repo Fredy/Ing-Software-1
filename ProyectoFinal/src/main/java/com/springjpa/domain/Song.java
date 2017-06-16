@@ -33,12 +33,16 @@ public class Song {
 
 	public Song(String name){
 	    this.name = name;
-        active = true;
-        avgRating = 0f;
-        timesRating = 0;
-        timesPlayed = 0;
-        albums = new ArrayList<Album>();
+		this.active = true;
+		this.avgRating = 0f;
+		this.timesRating = 0;
+		this.timesPlayed = 0;
+		this.albums = new ArrayList<Album>();
     }
+
+    public Song(){
+		this.albums = new ArrayList<Album>();
+	}
 	
 	public Integer getId() {
 		return id;
