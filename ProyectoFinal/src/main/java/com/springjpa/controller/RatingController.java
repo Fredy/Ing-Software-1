@@ -5,6 +5,7 @@ import com.springjpa.service.RatingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.Collection;
 
@@ -18,6 +19,7 @@ public class RatingController {
     RatingService ratingService;
 
     @RequestMapping("/ratings")
+    @ResponseBody
     public Collection<Rating> showAllRatings(){
         return ratingService.showAllRatings();
     }
