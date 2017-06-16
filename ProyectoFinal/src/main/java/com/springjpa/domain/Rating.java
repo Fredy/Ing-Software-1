@@ -6,6 +6,7 @@ import javax.persistence.*;
 @Table(name="rating")
 public class Rating {
 	@Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long id;
 	
 	@ManyToOne

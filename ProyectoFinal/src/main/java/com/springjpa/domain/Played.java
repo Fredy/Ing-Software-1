@@ -11,6 +11,7 @@ import javax.persistence.*;
 public class Played {
 	
 	@Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long id;
 
 	@ManyToOne
@@ -19,6 +20,7 @@ public class Played {
 
 	@ManyToOne
 	@JoinColumn(name="UserWhoPlayed")
+
 	private User userWhoPlayed;
 	private Date datePlayed;
 
