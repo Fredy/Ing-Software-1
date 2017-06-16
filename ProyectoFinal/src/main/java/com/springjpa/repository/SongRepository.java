@@ -30,4 +30,5 @@ public interface SongRepository extends CrudRepository<Song,Long>{
     * */
     @Query("SELECT a from Song a ORDER BY a.avgRating")
     Collection<Song> top10BestRating();
+
 }

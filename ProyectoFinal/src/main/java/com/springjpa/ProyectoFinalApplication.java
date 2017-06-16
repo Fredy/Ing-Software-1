@@ -126,13 +126,13 @@ public class ProyectoFinalApplication {
 		return albumRepository.getArtists(Long.parseLong(idOfAlbum));
 	}
 
-
+    /*
 	@RequestMapping("/songs")
 	@ResponseBody
 	Collection<Song> showSongs(){
 		return songRepository.findAll();
 	}
-
+    */
 	@RequestMapping("/playeds")
 	@ResponseBody
 	Collection<Played> showPlayeds(){
