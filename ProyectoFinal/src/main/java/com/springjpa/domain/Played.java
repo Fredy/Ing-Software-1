@@ -1,4 +1,6 @@
 package com.springjpa.domain;
+import com.sun.org.apache.xpath.internal.operations.Bool;
+
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.util.Calendar;
@@ -9,6 +11,7 @@ import javax.persistence.*;
 public class Played {
 	
 	@Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long id;
 
 	@ManyToOne
@@ -17,6 +20,7 @@ public class Played {
 
 	@ManyToOne
 	@JoinColumn(name="UserWhoPlayed")
+
 	private User userWhoPlayed;
 	private Date datePlayed;
 
@@ -31,7 +35,7 @@ public class Played {
     }
 	
 	public boolean updateTimesPlayed(Song song, User user){
-		//do something
+        songPlayed.updateTimesPlayed(); /// check this, because I don't remember why we need Song and User parameters
 		return true;
 	}
 	

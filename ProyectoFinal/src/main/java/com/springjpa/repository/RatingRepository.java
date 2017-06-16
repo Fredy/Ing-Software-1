@@ -10,4 +10,6 @@ import java.util.Collection;
 public interface RatingRepository extends CrudRepository<Rating,Long> {
     //@Query("SELECT a FROM Song a ORDER BY ")
     //Collection<Song> top100();
+    @Query("select a from Rating a")
+    Collection<Rating> findAll();
 }

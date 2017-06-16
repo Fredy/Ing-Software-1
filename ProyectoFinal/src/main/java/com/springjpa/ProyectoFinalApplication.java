@@ -7,6 +7,7 @@ import java.util.Date;
 
 import javax.annotation.PostConstruct;
 
+import com.springjpa.controller.SongController;
 import com.springjpa.domain.*;
 import com.springjpa.repository.*;
 import com.sun.org.apache.xalan.internal.xsltc.dom.AdaptiveResultTreeImpl;
@@ -18,8 +19,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 @Controller
+//@EnableWebMvc
 @SpringBootApplication
 public class ProyectoFinalApplication {
 
@@ -137,14 +140,14 @@ public class ProyectoFinalApplication {
 	@ResponseBody
 	Collection<Song> showSongs(){
 		return songRepository.findAll();
-	}*/
+	}
 
 	@RequestMapping("/playeds")
 	@ResponseBody
 	Collection<Played> showPlayeds(){
 		return playedRepository.findAll();
 	}
-
+    */
 	@RequestMapping("/users")
 	@ResponseBody
 	Collection<User> showUsers(){
@@ -182,7 +185,7 @@ public class ProyectoFinalApplication {
 	}
 
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 		SpringApplication.run(ProyectoFinalApplication.class, args);
 	}
 
