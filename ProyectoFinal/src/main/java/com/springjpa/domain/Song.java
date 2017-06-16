@@ -23,7 +23,7 @@ public class Song {
 	private boolean active;
 	private float avgRating;
 	private long sumRatings; /// We need sumRating for calculate avgRating -> avgRating = (sum(ratings)/timesRating)
-	private int timesRating; /// We need timesRating for calculate avgRating -> avgRating = (sum(ratings)/timesRating)
+	private int timesRated; /// We need timesRating for calculate avgRating -> avgRating = (sum(ratings)/timesRating)
 	private long timesPlayed;
 	
 	@ManyToMany(mappedBy="songs")
@@ -35,7 +35,7 @@ public class Song {
 	    this.name = name;
 		this.active = true;
 		this.avgRating = 0f;
-		this.timesRating = 0;
+		this.timesRated = 0;
 		this.timesPlayed = 0;
 		this.albums = new ArrayList<Album>();
     }
@@ -53,10 +53,10 @@ public class Song {
     }
 	
 	public void updateTimesPlayed(){
-		timesPlayed++;
+		this.timesPlayed++;
 	}
 	public boolean updateAvgRating(){
-		avgRating = sumRatings / timesRating;
+		avgRating = sumRatings / timesRated;
 		return true;
 	}
 	public void activate(){

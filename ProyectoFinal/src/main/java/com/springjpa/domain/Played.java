@@ -1,4 +1,6 @@
 package com.springjpa.domain;
+import com.sun.org.apache.xpath.internal.operations.Bool;
+
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.util.Calendar;
@@ -31,7 +33,7 @@ public class Played {
     }
 	
 	public boolean updateTimesPlayed(Song song, User user){
-		//do something
+        songPlayed.updateTimesPlayed(); /// check this, because I don't remember why we need Song and User parameters
 		return true;
 	}
 	
