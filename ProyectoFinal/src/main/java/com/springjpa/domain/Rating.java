@@ -19,7 +19,7 @@ public class Rating {
 	private int rate;
 	
 	public boolean rateSong(Song song, User user){
-		//do something
+
 		return true;
 	}
 	
