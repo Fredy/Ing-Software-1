@@ -20,7 +20,7 @@ public interface UserRepository extends CrudRepository<User, Long>{
     void deactive(Long id);
 
     // TODO: remove this!
-    @Query("SELECT p FROM User p")
+    @Query("SELECT p.name, p.userName, p.password, p.gender, p.signedInDate, p.active FROM User p")
     Collection<User> findAll();
     
     // TODO: change collection with Iterator
@@ -41,4 +41,9 @@ public interface UserRepository extends CrudRepository<User, Long>{
     //Get own playlists
     @Query("SELECT p FROM PlayList p JOIN p.user u where u.id = ?1" )
     Collection<PlayList> getPlaylists(Long id);
+
+    //Get relevant information
+    @Query("SELECT u.name AS name, u.email AS email FROM User u where u.id = ?1" )
+    Object getRelevantInfo(Long id);
 }
+

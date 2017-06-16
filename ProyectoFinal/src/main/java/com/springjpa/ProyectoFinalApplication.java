@@ -60,7 +60,8 @@ public class ProyectoFinalApplication {
             Timeline tml = new Timeline();
 
             timelineRepository.save(tml);
-            User usr = new User("USER_" + Integer.toString(i), true,
+            User usr = new User("USER_" + Integer.toString(i),
+					"EMAIL" + Integer.toString(i), true,
                     "USRNAME_" + Integer.toString(i),
                     "PSWRD_" + Integer.toString(i), Date.from(Instant.EPOCH),tml);
             userRepository.save(usr);
@@ -68,7 +69,8 @@ public class ProyectoFinalApplication {
             Timeline tml1 = new Timeline();
             timelineRepository.save(tml1);
 
-            User usr1 = new User("USER_2" + Integer.toString(i), true,
+            User usr1 = new User("USER_2" + Integer.toString(i),
+					"EMAIL_" + Integer.toString(i), true,
                     "USRNAME_2" + Integer.toString(i),
                     "PSWRD_2" + Integer.toString(i), Date.from(Instant.EPOCH),tml1);
             userRepository.save(usr1);
@@ -81,7 +83,7 @@ public class ProyectoFinalApplication {
 
         Timeline tml1 = new Timeline();
         timelineRepository.save(tml1);
-        User usr1 = new User("Pepito Arce", true, "pp32",
+        User usr1 = new User("Pepito Arce", "esdsd@sdsd.com",true, "pp32",
                              "hola", Date.from(Instant.EPOCH),tml1);
         userRepository.save(usr1);
 
@@ -166,6 +168,13 @@ public class ProyectoFinalApplication {
     Collection<User> showUFollowed(@RequestParam Long id){
         return userRepository.getFollowedUsers(id);
     }
+
+	@RequestMapping("/relevantInfo")
+	@ResponseBody
+	Object showRelevantInfo(@RequestParam Long id){
+		return userRepository.getRelevantInfo(id);
+	}
+
 
 	public static void main(String[] args) {
 		SpringApplication.run(ProyectoFinalApplication.class, args);

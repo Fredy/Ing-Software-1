@@ -12,15 +12,17 @@ public abstract class Person {
 	protected Long id;
 
 	protected String name;
+	protected String email;
 	protected boolean gender;
 	protected String userName;
 	protected String password;
 	protected Date signedInDate;
 	protected boolean active;
 
-	public Person(String name, boolean gender, String userName,
+	public Person(String name,String email , boolean gender, String userName,
 				  String password, Date signedInDate) {
 		this.name = name;
+		this.email = email;
 		this.gender = gender;
 		this.userName = userName;
 		this.password = password;

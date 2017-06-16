@@ -7,8 +7,8 @@ import java.util.Date;
 @PrimaryKeyJoinColumn(referencedColumnName="id")
 public class Admin extends Person{
 
-    public Admin(String name, boolean gender, String userName, String password, Date signedInDate) {
-        super(name, gender, userName, password, signedInDate);
+    public Admin(String name, String email, boolean gender, String userName, String password, Date signedInDate) {
+        super(name, email, gender, userName, password, signedInDate);
     }
 
     void activateUser(User targetUser) {

@@ -36,9 +36,9 @@ public class User extends Person {
     @ManyToMany(mappedBy="followers")
     private List<PlayList> followedPlaylists;
 
-    public User(String name, boolean gender, String userName,
+    public User(String name, String email, boolean gender, String userName,
                 String password, Date signedInDate, Timeline timeline) {
-        super(name, gender, userName, password, signedInDate);
+        super(name, email ,gender, userName, password, signedInDate);
         this.timeline = timeline;
         this.followedArtists = new Vector<Artist>();
         this.followedPlaylists = new  Vector<PlayList>();
@@ -95,3 +95,4 @@ public class User extends Person {
     */
 
 }
+

@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <title> Spotify </title>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"> </script>
+    <script src="userSettings.js"> </script>
     <link rel="stylesheet" type="text/css" href="css/style1.css">
     <link rel="stylesheet" type="text/css" href="css/user.css">
 </head>
+
 <body>
 <header>
     <div id="logo"></div>
@@ -26,17 +28,37 @@
             </div>
         </div>
     </div>
-    <div id = "menuUser" >
-        <img src = "img/muneco.jpg" width = 100 height =100 >
-        <br>Your name
-        <br><br>
-        <ul>
-            <li><a href="">Followed</a></li>
-            <li><a href="">Followers</a></li>
-            <li><a href="timelinePage.html">Timeline</a></li>
-        </ul>
-        <br>
-        <a href="userSettings.html"><img src = "img/settings-icon.png" width = 40 height =40 ></a>
+    <div data-ng-app="app" ng-controller="userSettings" ><!--ANGULAR JS-->
+    <div id = "menuUser"  >
+        <dl>
+            <dt>
+                <label>Name</label>
+            </dt>
+            <dd>
+                <input id="edtName" value="{{valueName}}" />
+            </dd>
+        </dl>
+        <dl>
+            <dt>
+                <label>Email</label>
+            </dt>
+            <dd>
+                <input id="edtEmail" value="{{valueEmail}}" />
+            </dd>
+        </dl>
+        <dl>
+            <dt>
+                <label>Password</label>
+            </dt>
+            <dd>
+                <input id="edtpassword" />
+            </dd>
+        </dl>
+    <p>
+        <button onclick="">Save</button>
+    </p>
+
+    </div>
     </div>
 </section>
 <div id="player"></div>
