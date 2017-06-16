@@ -1,7 +1,7 @@
 package com.springjpa.controller;
 
-import com.springjpa.domain.Played;
-import com.springjpa.service.PlayedService;
+import com.springjpa.domain.Rating;
+import com.springjpa.service.RatingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,13 +13,12 @@ import java.util.Collection;
  */
 
 @Controller
-public class PlayedController {
+public class RatingController {
     @Autowired
-    PlayedService playedService;
+    RatingService ratingService;
 
-    @RequestMapping("/playeds")
-    public Collection<Played> showAllPlayed(){
-        return playedService.findAll();
+    @RequestMapping("/ratings")
+    public Collection<Rating> showAllRatings(){
+        return ratingService.showAllRatings();
     }
-
 }
