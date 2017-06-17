@@ -22,10 +22,16 @@ public class PlaylistController {
         return playlistService.showPlaylists();
     }
 	
-//	@RequestMapping(value ="/getPlaylist", method = RequestMethod.GET)
-//    @ResponseBody
-//    public Collection<Song> showPlaylist(@RequestParam Long id){
-//        return playlistService.getSongList(id);
-//    }
+	@RequestMapping(value ="/newPlaylist", method = RequestMethod.POST)
+    @ResponseBody
+    public void addPlaylist(PlayList playlist){
+        playlistService.save(playlist);
+    }
+	
+	@RequestMapping(value ="/getPlaylist", method = RequestMethod.GET)
+    @ResponseBody
+    public Collection<Song> showPlaylist(@RequestParam Long id){
+        return playlistService.getSongList(id);
+    }
 
 }

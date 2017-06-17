@@ -25,11 +25,11 @@ public class PlaylistService {
         return playlistRepository.findOne(id);
     }
 	
-//	public Collection<Song> getSongList(long playlistId){
-//		return playlistRepository.getSongList(playlistId);
-//	}
-//	
-//	public Collection<User> getFollowers(long playlistId){
-//		return playlistRepository.getFollowers(playlistId);
-//	}
+	public Collection<Song> getSongList(long playlistId){
+		return playlistRepository.getSongList(playlistId);
+	}
+	
+	public Collection<User> getFollowers(long playlistId){
+		return playlistRepository.getFollowers(playlistId);
+	}
 }
