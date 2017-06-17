@@ -8,6 +8,7 @@ import java.util.Date;
 import javax.annotation.PostConstruct;
 
 import com.springjpa.controller.SongController;
+import com.springjpa.controller.UserController;
 import com.springjpa.domain.*;
 import com.springjpa.repository.*;
 import com.sun.org.apache.xalan.internal.xsltc.dom.AdaptiveResultTreeImpl;
@@ -41,12 +42,11 @@ public class ProyectoFinalApplication {
     @Autowired
 	SongRepository songRepository;
 
-    @Autowired
-	UserRepository userRepository;
-
 	@Autowired
 	PlayedRepository playedRepository;
 
+	@Autowired // TODO: remove this ???
+	UserRepository userRepository;
 
 //@PostConstruct
 //    void init(){
@@ -93,6 +93,7 @@ public class ProyectoFinalApplication {
 
 		PlayList pl1 = new PlayList("001", usr1);
 		playListRepository.save(pl1);
+
 		//SONGS
 
 		Song s1 = new Song("macarena");
@@ -148,17 +149,7 @@ public class ProyectoFinalApplication {
 		return playedRepository.findAll();
 	}
     */
-	@RequestMapping("/users")
-	@ResponseBody
-	Collection<User> showUsers(){
-		return userRepository.findAll();
-	}
 
-    @RequestMapping("/usera")
-    @ResponseBody
-    User showUser(@RequestParam Long id){
-        return userRepository.findOne(id);
-    }
 
    /* @RequestMapping("/timelines")
     @ResponseBody
@@ -173,18 +164,6 @@ public class ProyectoFinalApplication {
 	}
 
     */
-   @RequestMapping("/ufollowed")
-    @ResponseBody
-    Collection<User> showUFollowed(@RequestParam Long id){
-        return userRepository.getFollowedUsers(id);
-    }
-
-	@RequestMapping("/relevantInfo")
-	@ResponseBody
-	Object showRelevantInfo(@RequestParam Long id){
-		return userRepository.getRelevantInfo(id);
-	}
-
 
     public static void main(String[] args) {
 		SpringApplication.run(ProyectoFinalApplication.class, args);
