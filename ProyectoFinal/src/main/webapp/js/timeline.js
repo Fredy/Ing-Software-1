@@ -26,7 +26,7 @@ var app = angular.module('myApp', []);
 app.controller('myCtrl', function($scope, $http) {
     $http.get("songs")
         .then(function(response) {
-            alert(response.data[0].name);
+            //alert(response.data[0].name);
             $scope.showSongsPlayed = response.data;
         });
 });

@@ -160,7 +160,7 @@ public class ProyectoFinalApplication {
         return userRepository.findOne(id);
     }
 
-    @RequestMapping("/timelines")
+   /* @RequestMapping("/timelines")
     @ResponseBody
     Collection<Timeline> showTimelines(){
         return timelineRepository.findAll();
@@ -172,7 +172,8 @@ public class ProyectoFinalApplication {
 		return timelineRepository.getSongsPlayed(idT);
 	}
 
-    @RequestMapping("/ufollowed")
+    */
+   @RequestMapping("/ufollowed")
     @ResponseBody
     Collection<User> showUFollowed(@RequestParam Long id){
         return userRepository.getFollowedUsers(id);
