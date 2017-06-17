@@ -20,7 +20,7 @@ public class PlayList extends SongList {
 	protected String name;
 	protected Date creationDate;
 	
-	@OneToMany
+	@ManyToMany
 		@JoinTable(name = "playList_song", 
 		joinColumns = @JoinColumn(name = "PlayListID"),
 		inverseJoinColumns = @JoinColumn(name = "SongID"))
