@@ -1,32 +1,19 @@
 /**
  * Created by Maria on 15/06/2017.
  */
+var app = angular.module('myApp', []);
 
-/*angular.module('myApp', []).controller('Headers', function($scope) {
-    $scope.showHeaders = [
+app.controller('timelineCtrl', function($scope, $http) {
+    showHeaders = [
         {val:'Titulo'},
         {val:'Artista'},
-        {val:'Duracion'},
+        {val:'Album'},
         {val:'Duracion'},
         {val:'Score'},
     ];
-});
- $http.get("getTimeline?idT=21")
- var app = angular.module('myApp', []);
- app.controller('myCtrl', function($scope, $http) {
- $http.get("songs")
- .then(function(response) {
- alert(response.data[0].songPlayed.name);
- $scope.showSongsPlayed = response.data;
- });
- });
-*/
-
-var app = angular.module('myApp', []);
-app.controller('myCtrl', function($scope, $http) {
-    $http.get("songs")
+    $http.get("/showTimeline?idT=21")
         .then(function(response) {
-            alert(response.data[0].name);
+            //alert(response.data[0].songPlayed.name);
             $scope.showSongsPlayed = response.data;
         });
 });

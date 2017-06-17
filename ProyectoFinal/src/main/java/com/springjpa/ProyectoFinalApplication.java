@@ -8,6 +8,7 @@ import java.util.Date;
 import javax.annotation.PostConstruct;
 
 import com.springjpa.controller.SongController;
+import com.springjpa.controller.UserController;
 import com.springjpa.domain.*;
 import com.springjpa.repository.*;
 import com.sun.org.apache.xalan.internal.xsltc.dom.AdaptiveResultTreeImpl;
@@ -26,8 +27,8 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @SpringBootApplication
 public class ProyectoFinalApplication {
 
-	@Autowired
-	TimelineRepository timelineRepository;
+	@Autowired //TODO: Remove after tests
+	TimelineRepository timelineRepository; //TODO: Remove after tests
 
 	@Autowired
 	PlayListRepository playListRepository;
@@ -41,18 +42,11 @@ public class ProyectoFinalApplication {
     @Autowired
 	SongRepository songRepository;
 
-    @Autowired
-	UserRepository userRepository;
-
 	@Autowired
 	PlayedRepository playedRepository;
 
-
-//@PostConstruct
-//    void init(){
-//        Song s1 = new Song("alguna cancion");
-//        songRepository.save(s1);
-//    }
+	@Autowired // TODO: remove this ???
+	UserRepository userRepository;
 
     @PostConstruct
     void init() {
@@ -93,6 +87,7 @@ public class ProyectoFinalApplication {
 
 		PlayList pl1 = new PlayList("001", usr1);
 		playListRepository.save(pl1);
+
 		//SONGS
 
 		Song s1 = new Song("macarena");
@@ -148,41 +143,6 @@ public class ProyectoFinalApplication {
 		return playedRepository.findAll();
 	}
     */
-	@RequestMapping("/users")
-	@ResponseBody
-	Collection<User> showUsers(){
-		return userRepository.findAll();
-	}
-
-    @RequestMapping("/usera")
-    @ResponseBody
-    User showUser(@RequestParam Long id){
-        return userRepository.findOne(id);
-    }
-
-    @RequestMapping("/timelines")
-    @ResponseBody
-    Collection<Timeline> showTimelines(){
-        return timelineRepository.findAll();
-    }
-
-	@RequestMapping("/getTimeline")
-	@ResponseBody
-    Collection<Played> showTimeline(@RequestParam Long idT){
-		return timelineRepository.getSongsPlayed(idT);
-	}
-
-    @RequestMapping("/ufollowed")
-    @ResponseBody
-    Collection<User> showUFollowed(@RequestParam Long id){
-        return userRepository.getFollowedUsers(id);
-    }
-
-	@RequestMapping("/relevantInfo")
-	@ResponseBody
-	Object showRelevantInfo(@RequestParam Long id){
-		return userRepository.getRelevantInfo(id);
-	}
 
 
     public static void main(String[] args) {

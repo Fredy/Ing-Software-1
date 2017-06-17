@@ -28,7 +28,7 @@
         </div>
     </div>
 
-    <div ng-app="myApp" ng-controller="timelineCtrl" id = "tableTimeline">
+    <div ng-app="playlistApp" ng-controller="playlistCtrl" id = "tablePlaylist">
         <table border = 1>
             <tr>
                 <td> </td>
@@ -38,13 +38,13 @@
                 <td>Duración</td>
                 <td>Score</td>
             </tr>
-            <tr ng-repeat="x in showSongsPlayed">
+            <tr ng-repeat="x in showSongList">
                 <td> </td>
-                <td >{{ x.songPlayed.name }}</td>
-                <td > list of artist <!--{{ x.songPlayed.artist }}--></td>
-                <td >{{ x.songPlayed.albums }}</td>
-                <td >duracion <!--{{ x.songPlayed.duration }}--></td>
-                <td >{{ x.songPlayed.avgRating }}</td>
+                <td >{{ x.SongID.name }}</td>
+                <td > list of artist <!--{{ x.SongID.artist }}--></td> 
+                <td >{{ x.SongID.albums }}</td>
+                <td >duracion <!--{{ x.SongID.duration }}--></td>  
+                <td >{{ x.SongID.avgRating }}</td>
             </tr>
         </table>
     </div>

@@ -1,0 +1,16 @@
+#tableTimeline{
+    text-align: center;
+    padding: 50px;
+    position: relative;
+    width: 70%;
+    float: right;
+    font-size: 18px;
+}
+#tableTimeline td{
+    width: 200px;
+    background-color: #0F0E10;
+    color: whitesmoke;
+    font-family: sans-serif;
+    border-color: #0F0E10;
+    border-bottom-color: whitesmoke;
+}
