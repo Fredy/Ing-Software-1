@@ -11,6 +11,7 @@ import com.springjpa.controller.SongController;
 import com.springjpa.controller.UserController;
 import com.springjpa.domain.*;
 import com.springjpa.repository.*;
+import com.springjpa.service.ArtistService;
 import com.sun.org.apache.xalan.internal.xsltc.dom.AdaptiveResultTreeImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -26,6 +27,8 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 //@EnableWebMvc
 @SpringBootApplication
 public class ProyectoFinalApplication {
+	@Autowired
+	ArtistService artistService;
 
 	@Autowired //TODO: Remove after tests
 	TimelineRepository timelineRepository; //TODO: Remove after tests
@@ -102,6 +105,38 @@ public class ProyectoFinalApplication {
 
 		tml1.addSongPlayed(p1);
 		timelineRepository.save(tml1);
+
+		Album alb1 = new Album();
+		Artist art1 = new Artist();
+		art1.setName("Royal Blood");
+		alb1.setName("How did we get so dark?");
+		Song s3 = new Song("Hook, Line and Sinker");
+		Song s4 = new Song("Lights out");
+		Song s5 = new Song("How did we get so dark?");
+		Song s6 = new Song("Where are you now?");
+		albumRepository.save(alb1);
+		songRepository.save(s3);
+		songRepository.save(s4);
+		songRepository.save(s5);
+		songRepository.save(s6);
+		artistRepository.save(art1);
+		alb1.getSongs().add(s3);
+		alb1.getSongs().add(s4);
+		alb1.getSongs().add(s5);
+		alb1.getSongs().add(s6);
+		alb1.getArtists().add(art1);
+		art1.getAlbums().add(alb1);
+		s3.getAlbums().add(alb1);
+		s4.getAlbums().add(alb1);
+		s5.getAlbums().add(alb1);
+		s6.getAlbums().add(alb1);
+
+		albumRepository.save(alb1);
+		songRepository.save(s3);
+		songRepository.save(s4);
+		songRepository.save(s5);
+		songRepository.save(s6);
+		artistRepository.save(art1);
 	}
 
 
