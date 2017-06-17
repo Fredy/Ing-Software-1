@@ -47,13 +47,6 @@ public class ProyectoFinalApplication {
 	@Autowired
 	PlayedRepository playedRepository;
 
-
-//@PostConstruct
-//    void init(){
-//        Song s1 = new Song("alguna cancion");
-//        songRepository.save(s1);
-//    }
-
     @PostConstruct
     void init() {
 
@@ -160,19 +153,6 @@ public class ProyectoFinalApplication {
         return userRepository.findOne(id);
     }
 
-   /* @RequestMapping("/timelines")
-    @ResponseBody
-    Collection<Timeline> showTimelines(){
-        return timelineRepository.findAll();
-    }
-
-	@RequestMapping("/getTimeline")
-	@ResponseBody
-    Collection<Played> showTimeline(@RequestParam Long idT){
-		return timelineRepository.getSongsPlayed(idT);
-	}
-
-    */
    @RequestMapping("/ufollowed")
     @ResponseBody
     Collection<User> showUFollowed(@RequestParam Long id){
