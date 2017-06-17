@@ -41,10 +41,10 @@ public class TimelineController {
         return timelineService.getSongsPlayed(idT);
     }
 
-    /*@RequestMapping(value ="/getOwner", method = RequestMethod.GET)
+    @RequestMapping(value ="/getSongs", method = RequestMethod.GET)
     @ResponseBody
-    User getOwner(@RequestParam Long idT){
-        return timelineService.getOwner(idT);
-    }*/
+    public Collection<Played> getIdTimeline(@RequestParam Long userId){
+        Long idTimeline = timelineService.getIdTimeline(userId);
+        return timelineService.getSongsPlayed(idTimeline);}
 
 }

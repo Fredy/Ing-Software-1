@@ -31,7 +31,7 @@ public class TimelineService {
 
     public Collection<Played> getSongsPlayed(Long timelineId){return timelineRepository.getSongsPlayed(timelineId);}
 
-   //public User getOwner(Long idT){return timelineRepository.getOwner(idT);}
+    public Long getIdTimeline(Long userId){return timelineRepository.getIdTimeline(userId);}
 }
 
 

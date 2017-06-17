@@ -10,7 +10,7 @@ import org.springframework.data.repository.CrudRepository;
 import com.springjpa.domain.Timeline;
 
 
-public interface TimelineRepository extends CrudRepository<Timeline, Long>{
+public interface TimelineRepository extends CrudRepository<Timeline, Long> {
     @Query("SELECT a FROM Timeline a WHERE a.id = ?1")
     Timeline findOne(long id);
 
@@ -19,9 +19,8 @@ public interface TimelineRepository extends CrudRepository<Timeline, Long>{
     Collection<Timeline> findAll();
 
     @Query("SELECT b from Timeline a inner join a.songsPlayed b where  a.id= ?1")
-    Collection<Played>  getSongsPlayed(Long timelineId);
+    Collection<Played> getSongsPlayed(Long timelineId);
 
-/*    @Query("SELECT b from Timeline a inner join a.user b where  a.id= ?1")
-    User  getOwner(Long timelineId);
-*/
+    @Query("SELECT a.id from Timeline a inner join a.owner b where  b.id = ?1")
+    Long getIdTimeline(Long userId);
 }
