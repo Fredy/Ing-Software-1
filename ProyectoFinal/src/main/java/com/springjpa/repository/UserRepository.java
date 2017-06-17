@@ -20,7 +20,8 @@ public interface UserRepository extends CrudRepository<User, Long>{
     void deactive(Long id);
 
     // TODO: remove this!
-    @Query("SELECT p.name, p.userName, p.password, p.gender, p.signedInDate, p.active FROM User p")
+    //@Query("SELECT p.name, p.userName, p.password, p.gender, p.signedInDate, p.active FROM User p")
+    @Query("SELECT  p FROM User p")
     Collection<User> findAll();
     
     // TODO: change collection with Iterator

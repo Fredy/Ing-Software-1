@@ -1,13 +1,21 @@
 package com.springjpa.domain;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
 import java.util.Date;
 import java.util.List;
 import java.util.Vector;
 
 import javax.persistence.*;
 
+
 @Entity
 @Table(name = "user_table")
+@JsonIdentityInfo(generator=ObjectIdGenerators.IntSequenceGenerator.class, property="userId")
+// Solution for recursion problem :
+// https://stackoverflow.com/questions/3325387/infinite-recursion-with-jackson-json-and-hibernate-jpa-issue
 @PrimaryKeyJoinColumn(referencedColumnName="id")
 public class User extends Person {
     @OneToOne
