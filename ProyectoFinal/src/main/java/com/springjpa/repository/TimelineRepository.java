@@ -21,4 +21,7 @@ public interface TimelineRepository extends CrudRepository<Timeline, Long>{
     @Query("SELECT b from Timeline a inner join a.songsPlayed b where  a.id= ?1")
     Collection<Played>  getSongsPlayed(Long timelineId);
 
+/*    @Query("SELECT b from Timeline a inner join a.user b where  a.id= ?1")
+    User  getOwner(Long timelineId);
+*/
 }

@@ -2,6 +2,7 @@ package com.springjpa.service;
 
 import com.springjpa.domain.Played;
 import com.springjpa.domain.Timeline;
+import com.springjpa.domain.User;
 import com.springjpa.repository.TimelineRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,8 +17,8 @@ public class TimelineService {
     @Autowired
     TimelineRepository timelineRepository;
 
-    public void save(Timeline song){
-        timelineRepository.save(song);
+    public void save(Timeline timeline){
+        timelineRepository.save(timeline);
     }
 
     public Collection<Timeline> showTimelines(){
@@ -29,6 +30,8 @@ public class TimelineService {
     }
 
     public Collection<Played> getSongsPlayed(Long timelineId){return timelineRepository.getSongsPlayed(timelineId);}
+
+   //public User getOwner(Long idT){return timelineRepository.getOwner(idT);}
 }
 
 
