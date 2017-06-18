@@ -88,8 +88,6 @@ public class ProyectoFinalApplication {
                              "hola", Date.from(Instant.EPOCH),tml1);
         userRepository.save(usr1);
 
-		PlayList pl1 = new PlayList("001", usr1);
-		playListRepository.save(pl1);
 
 		//SONGS
 
@@ -105,6 +103,14 @@ public class ProyectoFinalApplication {
 
 		tml1.addSongPlayed(p1);
 		timelineRepository.save(tml1);
+		
+		PlayList pl1 = new PlayList("Playlist1", usr1);
+		playListRepository.save(pl1);
+		
+		pl1.addSong(s1);
+		pl1.addSong(s2);
+		playListRepository.save(pl1);
+		
 
 		Album alb1 = new Album();
 		Artist art1 = new Artist();
@@ -141,9 +147,9 @@ public class ProyectoFinalApplication {
 
 
 
-	@RequestMapping("/playLists")
+	@RequestMapping("/playlists")
 	@ResponseBody
-	Collection<PlayList> showPlayLists() {
+	Collection<PlayList> showPlaylists() {
 		return playListRepository.findAll();
 	}
 

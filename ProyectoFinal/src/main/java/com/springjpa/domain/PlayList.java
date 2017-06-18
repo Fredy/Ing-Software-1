@@ -19,14 +19,13 @@ public class PlayList extends SongList {
 	protected long id;
 	protected String name;
 	protected Date creationDate;
+	private boolean active;	
 	
 	@ManyToMany
 		@JoinTable(name = "playList_song", 
 		joinColumns = @JoinColumn(name = "PlayListID"),
 		inverseJoinColumns = @JoinColumn(name = "SongID"))
 	protected List<Song> songList;
-	
-	
 	
 	@ManyToMany
     @JoinTable(
@@ -42,12 +41,15 @@ public class PlayList extends SongList {
 	public PlayList() {
 		songList = new ArrayList<Song>();
 		followers= new ArrayList<User>();
+		active    = true;
 	}
+
 	public PlayList(String name,User user) {
 		this.name = name;
 		this.user = user;
 		songList = new ArrayList<Song>();
 		followers= new ArrayList<User>();
+		active    = true;
 	}
 	
 	public String getName(){
@@ -60,11 +62,28 @@ public class PlayList extends SongList {
 	public long getId(){
 		return id;
 	}
-//	public void setId(Long id){
-//		this.id=id;
-//	}
+	
 	public Date getCreationDate(){
 		return creationDate;
+	}
+	public void addSong (Song newSong){
+        songList.add(newSong);
+	}
+	
+	public void activate(){
+        active = true;
+    }
+	
+	public void desactivate(){
+        active = false;
+    }
+	
+	public boolean isActive() {
+        return active;
+    }
+	
+	public List<User> getFollowers(){
+		return followers;
 	}
 	
 	public void addFollowers(User newFollower){

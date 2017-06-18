@@ -13,8 +13,8 @@ public class PlaylistService {
 	@Autowired
     PlayListRepository playlistRepository;
 	
-	public void save(PlayList song){
-        playlistRepository.save(song);
+	public void save(PlayList playlist){
+        playlistRepository.save(playlist);
     }
 	
 	public Collection<PlayList> showPlaylists(){
