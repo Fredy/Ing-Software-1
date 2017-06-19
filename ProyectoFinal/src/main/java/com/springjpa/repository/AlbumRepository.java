@@ -5,6 +5,7 @@ package com.springjpa.repository;
  */
 
 import com.springjpa.domain.Artist;
+import com.springjpa.domain.Song;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import com.springjpa.domain.Album;
@@ -45,4 +46,9 @@ public interface AlbumRepository extends CrudRepository<Album,Long>{
 
     @Query("select b.id from Album a INNER join a.artists b where a.id=?1")
     Collection<Long> getArtistsId(Long AlbumId);
+
+    @Query("select b from Album a INNER join a.songs b where a.id=?1")
+    Collection<Song> getSongs(Long AlbumId);
+
+
 }

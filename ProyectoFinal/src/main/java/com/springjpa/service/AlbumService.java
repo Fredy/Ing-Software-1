@@ -2,6 +2,7 @@ package com.springjpa.service;
 
 import com.springjpa.domain.Album;
 import com.springjpa.domain.Artist;
+import com.springjpa.domain.Song;
 import com.springjpa.repository.AlbumRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -48,5 +49,8 @@ public class AlbumService {
     }
     public Collection<String> getArtistsNameofAlbum(Long id){
         return albumRepository.getArtistsName(id);
+    }
+    public Collection<Song> getSongsofAlbum(Long id){
+        return albumRepository.getSongs(id);
     }
 }

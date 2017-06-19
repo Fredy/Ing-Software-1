@@ -1,6 +1,7 @@
 package com.springjpa.controller;
 
 import com.springjpa.domain.Artist;
+import com.springjpa.domain.Song;
 import com.springjpa.service.AlbumService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,5 +23,11 @@ public class AlbumController {
    @ResponseBody
     Collection<String> getArtistofAlbum(@RequestParam Long id){
        return albumService.getArtistsNameofAlbum(id);
+   }
+
+   @RequestMapping("/getSongsOfAlbum")
+   @ResponseBody
+   Collection<Song> getSongsOfAlbum(@RequestParam Long id){
+        return albumService.getSongsofAlbum(id);
    }
 }
