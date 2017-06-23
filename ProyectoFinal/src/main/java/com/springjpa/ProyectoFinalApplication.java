@@ -45,6 +45,7 @@ public class ProyectoFinalApplication {
     @Autowired
 	SongRepository songRepository;
 
+
 	@Autowired
 	PlayedRepository playedRepository;
 
@@ -103,10 +104,10 @@ public class ProyectoFinalApplication {
 
 		tml1.addSongPlayed(p1);
 		timelineRepository.save(tml1);
-		
+
 		PlayList pl1 = new PlayList("Playlist1", usr1);
 		playListRepository.save(pl1);
-		
+
 		pl1.addSong(s1);
 		pl1.addSong(s2);
 		playListRepository.save(pl1);
@@ -143,10 +144,10 @@ public class ProyectoFinalApplication {
 		songRepository.save(s5);
 		songRepository.save(s6);
 		artistRepository.save(art1);
+
 	}
 
-
-
+    /*
 	@RequestMapping("/playlists")
 	@ResponseBody
 	Collection<PlayList> showPlaylists() {
@@ -170,7 +171,7 @@ public class ProyectoFinalApplication {
 	Collection<Artist> giveArtists(@RequestParam String idOfAlbum){
 		return albumRepository.getArtists(Long.parseLong(idOfAlbum));
 	}
-
+    */
     /*
 	@RequestMapping("/songs")
 	@ResponseBody

@@ -25,6 +25,10 @@ public class SongService {
         songRepository.save(song);
     }
 
+    public float getAverageRating(Song s){
+        return songRepository.findAverageRating(s.getId());
+    }
+
     public Collection<Song> showSongs(){
         return songRepository.findAll();
     }

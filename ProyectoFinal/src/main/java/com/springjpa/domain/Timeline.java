@@ -14,7 +14,7 @@ public class Timeline {
     protected long id;
 	
 	@OneToMany
-	@JoinColumn(name="SongPlayed")
+	@JoinColumn(name="SongsPlayed")
     private List<Played> songsPlayed;
     
     @OneToOne(mappedBy="timeline")
@@ -26,7 +26,7 @@ public class Timeline {
 	}
 
 	public Timeline(){
-		this.songsPlayed =  new Vector<Played>();
+		this.songsPlayed = new Vector<Played>();
 	}
 
     public boolean show(){

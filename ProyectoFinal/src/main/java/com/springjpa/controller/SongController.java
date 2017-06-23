@@ -26,7 +26,8 @@ public class SongController {
         songService.save(song);
     }
 
-    @RequestMapping(value = "/songs", method = RequestMethod.GET)
+    //@RequestMapping(value = "/songs", method = RequestMethod.GET)
+    @RequestMapping(value = "/songs")
     @ResponseBody
     public Collection<Song> showSongs(){
         return songService.showSongs();

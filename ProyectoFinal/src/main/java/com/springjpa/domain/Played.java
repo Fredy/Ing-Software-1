@@ -15,13 +15,13 @@ public class Played {
 	private long id;
 
 	@ManyToOne
-	@JoinColumn(name="TimelineOwner")
+	@JoinColumn(name="songPlayed")
 	private Song songPlayed;
 
 	@ManyToOne
 	@JoinColumn(name="UserWhoPlayed")
-
 	private User userWhoPlayed;
+
 	private Date datePlayed;
 
 	public Played(User u,Song sp){

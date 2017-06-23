@@ -22,6 +22,7 @@ public class Artist {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private long id;
+
     @Column(name = "name")
     private String name;
     private boolean active;

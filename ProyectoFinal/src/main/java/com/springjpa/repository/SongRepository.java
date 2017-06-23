@@ -11,6 +11,9 @@ public interface SongRepository extends CrudRepository<Song,Long>{
     @Query("SELECT a FROM Song a WHERE a.id = ?1")
     Song findById(long id);
 
+    @Query("select a.avgRating from Song a ")
+    float findAverageRating(long id);
+
     @Query("SELECT a FROM Song a WHERE a.name like ?1")
     Song findByName(String name);
 

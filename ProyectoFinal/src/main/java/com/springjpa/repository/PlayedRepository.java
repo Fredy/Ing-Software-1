@@ -11,4 +11,6 @@ public interface PlayedRepository extends CrudRepository<Played,Long>{
 
     @Query("SELECT a FROM Played a")
     Collection<Played> findAll();
+
+
 }

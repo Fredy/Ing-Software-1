@@ -1,5 +1,9 @@
 package com.springjpa.domain;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.net.URL;
@@ -11,6 +15,8 @@ import javax.persistence.Column;
 */
 import javax.persistence.*;
 
+@JsonIdentityInfo(generator=ObjectIdGenerators.IntSequenceGenerator.class)
+@JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY, getterVisibility = JsonAutoDetect.Visibility.NONE, setterVisibility = JsonAutoDetect.Visibility.NONE)
 @Entity
 @Table (name="Song")
 public class Song {
@@ -25,6 +31,7 @@ public class Song {
 	private long sumRatings; /// We need sumRating for calculate avgRating -> avgRating = (sum(ratings)/timesRating)
 	private int timesRated; /// We need timesRating for calculate avgRating -> avgRating = (sum(ratings)/timesRating)
 	private long timesPlayed;
+    private int duration;
 	
 	@ManyToMany(mappedBy="songs")
 	private List<Album> albums;
@@ -37,6 +44,7 @@ public class Song {
 		this.avgRating = 0f;
 		this.timesRated = 0;
 		this.timesPlayed = 0;
+		this.duration = 0;
 		this.albums = new ArrayList<Album>();
     }
 
@@ -97,6 +105,14 @@ public class Song {
 	public void setTimesPlayed(long timesPlayed) {
 		this.timesPlayed = timesPlayed;
 	}
+
+    public int getDuration() {
+        return duration;
+    }
+
+    public void setDuration(int duration) {
+        this.duration = duration;
+    }
 
 	public List<Album> getAlbums() {
 		return albums;
