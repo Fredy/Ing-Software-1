@@ -1,0 +1,151 @@
+header {
+    position: relative;
+    margin: 0 0%;
+    background-color: #454e58;
+    /* width: 100%; */
+    height: 60px;
+    padding : 7.5px 10% 7.5px 10%;
+    z-index: 1;
+    border-style: solid;
+    border-width: 0 0 1px 0;
+    border-color: black;
+}
+
+#logo {
+    float: left;
+    width: 20%;
+    height: 60px;
+}
+
+#logo img {
+    width: auto;
+    height: 100%;
+}
+
+#search {
+    float: left;
+    display: inline-block;
+    margin: auto;
+    width: 40%;
+    padding: 10px 10% 10px 10%;
+    height: auto;
+}
+
+#search input {
+    float: left;
+    font-size: 16px;
+    border-radius: 5px;
+    outline: none;
+    background: #6f7f8e;
+    border-color: transparent;
+    padding : 0px 5px 0px 5px;
+    height: 30px;
+    width: 100%;
+}
+
+#search input:focus {
+    outline: none;
+    background: #8b98a5;
+}
+
+#search input::-webkit-input-placeholder{
+    color : #3c3c3c;
+}
+
+#userImgA {
+    float: left;
+    width: 20%;
+    display: inline-block;
+}
+
+#userImg {
+    float: right;
+    display: inline-block;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+body {
+    font-size: 14px;
+    font-family: "Open Sans",arial,sans-serif;
+    background-color: #FFFFFF;
+    line-height: 1.6;
+    width: 100%;
+    margin: 0;
+}
+
+#leftPanel {
+    position: fixed;
+    left: 0;
+    bottom: 71px;
+    width: 200px;
+    height: 100%;
+    background: #e4e6e8;
+    border-style: solid;
+    border-width: 0 1px 0 0;
+    border-color: #858687;
+
+}
+
+#albumArt {
+    position: absolute;
+    bottom: 0px;
+    display: inline-block;
+    float: left;
+    width: 100%;
+    height: 200px;
+}
+
+#albumArt img {
+    width: auto;
+    height: 100%;
+}
+
+#leftButtons {
+    position: fixed;
+    top: 65px;
+    display: inline-block;
+    margin: 20px 0 0 0;
+    max-width: 160px;
+    width: 180px;
+    padding: 0px
+}
+
+.leftBItem {
+    float: left;
+    width: 100%;
+    list-style-type: none;
+}
+
+.leftBItem a {
+    /* font-weight: bold; */
+    display: inline-block;
+    padding: 7.5px 20px 7.5px 20px;
+    width: 100%;
+    height: 100%;
+    color: #2d343a;
+    text-decoration: none;
+    font-size: 16.5px;
+}
+
+.leftBItem a:hover{
+    color: #e4e6e8;
+    background: #1b2229;
+}
+
+#player {
+    position: fixed;
+    bottom: 0;
+    background: #e4e6e8;
+    width: 100%;
+    height: 70px;
+    padding: 0 3px 0 3px;
+    border-style: solid;
+    border-width: 1px 0 0 0;
+    border-color: #858687;
+
+}
