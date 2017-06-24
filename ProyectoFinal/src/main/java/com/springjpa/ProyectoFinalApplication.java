@@ -118,35 +118,63 @@ public class ProyectoFinalApplication {
 		
 
 		Album alb1 = new Album();
+		Album alb2 = new Album();
 		Artist art1 = new Artist();
 		art1.setName("Royal Blood");
 		alb1.setName("How did we get so dark?");
+		alb2.setName("Royal Blood");
 		Song s3 = new Song("Hook, Line and Sinker");
 		Song s4 = new Song("Lights out");
 		Song s5 = new Song("How did we get so dark?");
 		Song s6 = new Song("Where are you now?");
+
+		Song s7 = new Song("Figure it out");
+		Song s8 = new Song("Out of Black");
+		Song s9 = new Song("Little Monster");
+		Song s10 = new Song("You can be so cruel");
+
 		albumRepository.save(alb1);
+		albumRepository.save(alb2);
 		songRepository.save(s3);
 		songRepository.save(s4);
 		songRepository.save(s5);
 		songRepository.save(s6);
+		songRepository.save(s7);
+		songRepository.save(s8);
+		songRepository.save(s9);
+		songRepository.save(s10);
 		artistRepository.save(art1);
 		alb1.getSongs().add(s3);
 		alb1.getSongs().add(s4);
 		alb1.getSongs().add(s5);
 		alb1.getSongs().add(s6);
+		alb2.getSongs().add(s7);
+		alb2.getSongs().add(s8);
+		alb2.getSongs().add(s9);
+		alb2.getSongs().add(s10);
 		alb1.getArtists().add(art1);
+		alb2.getArtists().add(art1);
 		art1.getAlbums().add(alb1);
+		art1.getAlbums().add(alb2);
 		s3.getAlbums().add(alb1);
 		s4.getAlbums().add(alb1);
 		s5.getAlbums().add(alb1);
 		s6.getAlbums().add(alb1);
+		s7.getAlbums().add(alb2);
+		s8.getAlbums().add(alb2);
+		s9.getAlbums().add(alb2);
+		s10.getAlbums().add(alb2);
 
 		albumRepository.save(alb1);
+		albumRepository.save(alb2);
 		songRepository.save(s3);
 		songRepository.save(s4);
 		songRepository.save(s5);
 		songRepository.save(s6);
+		songRepository.save(s7);
+		songRepository.save(s8);
+		songRepository.save(s9);
+		songRepository.save(s10);
 		artistRepository.save(art1);
 
 		ratingService.doRating(usr1,s1,3);
