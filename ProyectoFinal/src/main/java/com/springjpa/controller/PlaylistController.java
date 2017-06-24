@@ -32,9 +32,16 @@ public class PlaylistController {
         playlistService.save(playlist);
     }
 	
+	@RequestMapping(value="/playlistOf", method = RequestMethod.GET)
+	@ResponseBody
+	public Collection<PlayList> playlistOf(@RequestParam long id){
+		return playlistService.getPlaylistOfUser(id);
+	}
+	
+	
 	@RequestMapping(value ="/getPlaylist", method = RequestMethod.GET)
     @ResponseBody
-    public Collection<Song> getPlaylist(@RequestParam Long id){
+    public Collection<Song> getPlaylist(@RequestParam long id){
         return playlistService.getSongList(id);
     }
 
