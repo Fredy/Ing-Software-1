@@ -15,7 +15,7 @@ public interface PlayListRepository extends CrudRepository<PlayList, Long>{
     @Query("SELECT a FROM PlayList a WHERE a.id = ?1")
     PlayList findOne(long id);
     
-    @Query("SELECT a FROM PlayList a")
+    @Query("SELECT a FROM PlayList a where a.active=true")
     Collection<PlayList> findAll();
     
     @Query("SELECT a FROM PlayList a inner join a.user b where b.id= ?1")

@@ -8,8 +8,9 @@ app.controller('playlistCtrl', function($scope, $http) {
         {val:'Duracion'},
         {val:'Score'},
     ];
-    $http.get("/showPlaylist?idT=21")
+    $http.get("/getPlaylist?id=2")
         .then(function(response) {
-            $scope.showSongList = response.data;
+            $scope.getPlaylist = response.data;
         });
 });
+

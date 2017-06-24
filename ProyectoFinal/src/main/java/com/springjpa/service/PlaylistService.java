@@ -3,12 +3,14 @@ package com.springjpa.service;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.springjpa.domain.PlayList;
 import com.springjpa.domain.Song;
 import com.springjpa.domain.User;
 import com.springjpa.repository.PlayListRepository;
 
+@Service
 public class PlaylistService {
 	@Autowired
     PlayListRepository playlistRepository;
