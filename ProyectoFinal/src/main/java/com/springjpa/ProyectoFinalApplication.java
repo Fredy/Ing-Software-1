@@ -12,6 +12,7 @@ import com.springjpa.controller.UserController;
 import com.springjpa.domain.*;
 import com.springjpa.repository.*;
 import com.springjpa.service.ArtistService;
+import com.springjpa.service.RatingService;
 import com.sun.org.apache.xalan.internal.xsltc.dom.AdaptiveResultTreeImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -51,6 +52,9 @@ public class ProyectoFinalApplication {
 
 	@Autowired // TODO: remove this ???
 	UserRepository userRepository;
+
+    @Autowired
+    RatingService ratingService;
 
     @PostConstruct
     void init() {
@@ -145,6 +149,7 @@ public class ProyectoFinalApplication {
 		songRepository.save(s6);
 		artistRepository.save(art1);
 
+		ratingService.doRating(usr1,s1,3);
 	}
 
     /*

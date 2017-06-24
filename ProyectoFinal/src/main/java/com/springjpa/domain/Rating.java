@@ -18,9 +18,18 @@ public class Rating {
 
 	private Date dateRated;
 	private int rate;
-	
-	public boolean rateSong(Song song, User user){
-        
+
+	public Rating(User u, Song s, int rating){
+	    userWhoRated = u;
+	    songRated = s;
+	    rate = rating;
+	    dateRated = new Date();
+    }
+
+    public Rating(){}
+
+	public boolean rateSong(Song song, User user,int rate){
+
 		return true;
 	}
 	
