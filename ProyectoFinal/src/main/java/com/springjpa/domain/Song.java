@@ -23,7 +23,7 @@ public class Song {
 	
 	@Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Integer id; //NOTE: I think "URL file" might be a possible id
+	private Long id;
 	@Column (name ="name")
 	private String name;
 	private boolean active;
@@ -52,11 +52,11 @@ public class Song {
 		this.albums = new ArrayList<Album>();
 	}
 	
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 	
