@@ -3,10 +3,11 @@ package com.springjpa.service;
 import com.springjpa.domain.Song;
 import com.springjpa.repository.SongRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.awt.print.Pageable;
 import java.util.Collection;
 
 /**
@@ -50,13 +51,15 @@ public class SongService {
     }
 
     public Collection<Song> top10BestRating(){
-        Collection<Song> result = songRepository.top10BestRating();//.setMaxResults(10).getResultList;
+        Pageable page = new PageRequest(0,10);
+        Collection<Song> result = songRepository.top10BestRating(page).getContent();//.setMaxResults(10).getResultList;
         return result;
 
     }
 
     public Collection<Song> top100MostPlayed() {
-        songRepository.top100MostPlayed();//.setMaxResults(100).getResultList;
-        return null;
+        Pageable page = new PageRequest(0,100);
+        Collection<Song> result = songRepository.top100MostPlayed(page).getContent();
+        return result;
     }
 }

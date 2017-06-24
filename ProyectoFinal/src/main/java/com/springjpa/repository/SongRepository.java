@@ -6,7 +6,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
-import java.awt.print.Pageable;
+import org.springframework.data.domain.Pageable;
 import java.util.Collection;
 
 public interface SongRepository extends CrudRepository<Song,Long>{
@@ -24,19 +24,12 @@ public interface SongRepository extends CrudRepository<Song,Long>{
     @Query("SELECT a FROM Song a where a.active=true")
     Collection<Song> findAll();
 
-    /*
-    * JPA dont suport operation LIMIT, for this reason when U try to call next funtions do:
-    * Collection<Song> resultList= top100MostPlayed.setMaxResults(100).getResultList();
-    * */
-    //@Query(value="SELECT a from Song a ORDER BY a.times_played DESC limit 100", nativeQuery = true) //I try to get results with nativeQuery
     @Query(value="SELECT a from Song a ORDER BY a.timesPlayed DESC")
-    Collection<Song> top100MostPlayed();
+    Page<Song> top100MostPlayed(Pageable pageable);
 
-    /*
-    * Collection<Song> resultList= top10BestRating.setMaxResults(10).getResultList();
-    * */
+
     @Query("SELECT a from Song a ORDER BY a.avgRating")
-    Collection<Song> top10BestRating();
+    Page<Song> top10BestRating(Pageable pageable);
 
 
 }
