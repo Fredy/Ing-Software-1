@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>Artist</title>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"> </script>
+    <script src="../js/artist.js"> </script>
+    <script src="../js/artist2.js"> </script>
     <link rel="stylesheet" type="text/css" href="css/style1.css">
 </head>
 <body>
@@ -25,13 +27,9 @@
             </div>
         </div>
     </div>
-    <div ng-app="artistName" ng-controller="Ctrl" ng-bind-html="{showArtist}" >
+    <div ng-app="artistName" ng-controller="Ctrl" id="getArtistName" ng-bind="showArtist.name">
     </div>
-    <div id="artistAlbums">
-        <ul>
-            <li>How did we get so dark?</li>
-            <li>Royal Blood</li>
-        </ul>
+    <div ng-app="artistAlbums" ng-controller="Ctrl" id="getArtistAlbums" ng-bind="showAlbums">
     </div>
 </section>
 <div id="player"></div>

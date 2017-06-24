@@ -32,4 +32,10 @@ public class ArtistController {
     Collection<Album> getAlbumsOfArtist(@RequestParam Long id) {
         return artistService.getAlbumsOfArtist(id);
     }
+
+    @RequestMapping("/ObjArtist")
+    @ResponseBody
+    Artist getArtist(@RequestParam Long id){
+        return artistService.findArtistById(id);
+    }
 }
