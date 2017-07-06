@@ -10,25 +10,30 @@ public class Player {
 		return songPauseState;
 	}
 	
+	//TODO: que se mueva el cursor en la linea en tiempo de reproduccion 
+	
 	public void play(){
 		//something
-	}
+		//TODO: que funcione
+		}
 	
 	public void pause(){
 		//something
+		//TODO: que funcione
 	}
 	public void stop(){
 		//something
+		//TODO: que funcione
 	}
 	public void next(){
 		queue.next();
-		
 	}
 	public void prev(){
 		queue.prev();
 	}
 	public void random(){
-		//something
+		
+		//TODO: PlayQueue.setRandom
 	}
 	
 }

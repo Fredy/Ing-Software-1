@@ -25,24 +25,28 @@ public class PlaylistController {
     public Collection<PlayList> showPlaylists(){
         return playlistService.showPlaylists();
     }
-	
+
+    //TODO: solo en el Service
 	@RequestMapping(value ="/newPlaylist", method = RequestMethod.POST)
     @ResponseBody
     public void addPlaylist(PlayList playlist){
         playlistService.save(playlist);
     }
-	
+
+    //Muestra todas las playlist del usuario
 	@RequestMapping(value="/playlistOf", method = RequestMethod.GET)
 	@ResponseBody
 	public Collection<PlayList> playlistOf(@RequestParam long id){
 		return playlistService.getPlaylistOfUser(id);
 	}
 	
-	
+	//Muestra todas las canciones de la playlist
 	@RequestMapping(value ="/getPlaylist", method = RequestMethod.GET)
     @ResponseBody
     public Collection<Song> getPlaylist(@RequestParam long id){
         return playlistService.getSongList(id);
     }
+
+    //TODO: mostrar los seguidores de la playlist
 
 }

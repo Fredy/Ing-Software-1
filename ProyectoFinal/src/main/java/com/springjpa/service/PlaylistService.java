@@ -22,7 +22,8 @@ public class PlaylistService {
 	public Collection<PlayList> showPlaylists(){
         return playlistRepository.findAll();
     }
-	
+
+    //TODO: recuerdar que hace
 	public PlayList findById(long id){
         return playlistRepository.findOne(id);
     }

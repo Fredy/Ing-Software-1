@@ -25,6 +25,7 @@ public class TimelineService {
         return timelineRepository.findAll();
     }
 
+    //TODO: revisar que hace
     public Timeline findById(long idT){
         return timelineRepository.findOne(idT);
     }

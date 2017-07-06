@@ -21,13 +21,21 @@ public class PlayQueue extends SongList {
 	}
 
 	public void addPlayList (PlayList newPlayList){
-        //songList.add(newPlayList); agregar cancion por cancion
+        //TODO :songList.add(newPlayList); agregar cancion por cancion
     }
+	
+	//TODO :AddAlbum
+	//TODO :AddSong
+	
 	public void next(){
+		//TODO :if (random) then Funrandom()
+		//TODO :else
 		currentSong+=1;
 		//something
 	}
 	public void prev(){
+		//TODO :if (random) then Funrandom()
+		//TODO :else
 		currentSong-=1;
 		//something
 	}

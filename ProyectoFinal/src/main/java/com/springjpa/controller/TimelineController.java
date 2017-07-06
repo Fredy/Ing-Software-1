@@ -22,6 +22,8 @@ public class TimelineController {
     @Autowired
     TimelineService timelineService;
 
+
+    //TODO: solo en el Service
     @RequestMapping(value ="/insertTimeline", method = RequestMethod.POST)
     @ResponseBody
     public void addTimeline(Timeline timeline){
@@ -35,12 +37,12 @@ public class TimelineController {
         return timelineService.showTimelines();
     }
 
-    @RequestMapping(value ="/showTimeline", method = RequestMethod.GET)
+    /*@RequestMapping(value ="/showTimeline", method = RequestMethod.GET)
     @ResponseBody
     public Collection<Played> showTimeline(@RequestParam Long idT){
         return timelineService.getSongsPlayed(idT);
     }
-
+    */
     @RequestMapping(value ="/getSongs", method = RequestMethod.GET)
     @ResponseBody
     public Collection<Played> getIdTimeline(@RequestParam Long userId){

@@ -20,6 +20,7 @@ public class Timeline {
     @OneToOne(mappedBy="timeline")
     private User owner;
 
+    //Llamado por el constructor del usuario XD
     public Timeline(User owner){
     	this.owner = owner;
     	this.songsPlayed =  new Vector<Played>();
