@@ -32,8 +32,10 @@ public class Player {
 		queue.prev();
 	}
 	public void random(){
-		
-		//TODO: PlayQueue.setRandom
+		if(queue.isRandom()){
+			queue.setRandom(false);
+		}else {
+			queue.setRandom(true);
+		}
 	}
-	
 }

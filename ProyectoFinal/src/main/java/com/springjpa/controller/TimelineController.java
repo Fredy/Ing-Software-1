@@ -22,31 +22,17 @@ public class TimelineController {
     @Autowired
     TimelineService timelineService;
 
-
-    //TODO: solo en el Service
-    @RequestMapping(value ="/insertTimeline", method = RequestMethod.POST)
-    @ResponseBody
-    public void addTimeline(Timeline timeline){
-        timelineService.save(timeline);
-    }
-
-
+    //Muestra todos los timeline de la bd
     @RequestMapping(value ="/timelines", method = RequestMethod.GET)
     @ResponseBody
     public Collection<Timeline> showTimelines(){
         return timelineService.showTimelines();
     }
 
-    /*@RequestMapping(value ="/showTimeline", method = RequestMethod.GET)
-    @ResponseBody
-    public Collection<Played> showTimeline(@RequestParam Long idT){
-        return timelineService.getSongsPlayed(idT);
-    }
-    */
+    //Muestra el conjunto de canciones que componen al Timeline
     @RequestMapping(value ="/getSongs", method = RequestMethod.GET)
     @ResponseBody
     public Collection<Played> getIdTimeline(@RequestParam Long userId){
         Long idTimeline = timelineService.getIdTimeline(userId);
         return timelineService.getSongsPlayed(idTimeline);}
-
 }
