@@ -4,8 +4,11 @@
     <meta charset ="UTF-8">
     <title> Spotify </title>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"> </script>
+    <script src="../js/timeline.js"></script>
     <link href="css/style.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="css/timeline.css" rel="stylesheet" type="text/css" >
 </head>
+
 <body>
 <header>
     <div id="logo">
@@ -19,7 +22,7 @@
     </div>
 
     <div id="userImgA">
-        <a  href="">
+        <a  href="userPage.html"> <!-- TODO: linkear con el div verdadero -->
                     <span id="userImg"
                           style="background-image:url('img/user.jpg')">
                     </span>
@@ -35,7 +38,7 @@
             <a href=""> Your Music </a>
         </li>
         <li class="leftBItem">
-            <a href=""> PlayLists </a>
+            <a href="playlistsPage.html"> PlayLists </a> <!-- TODO: linkear con el div verdadero -->
         </li>
         <li class="leftBItem">
             <a href=""> Opcion 3 </a>
@@ -50,8 +53,29 @@
     </div>
 </div>
 
-<div id="content">
-
+<div  id="content">
+    <img  style="float: right; width: 60%;" src = "../img/top10Music.png"  height =450 >
+</div>
+<!--style="display: none;"-->
+<div style="display: none;" ng-app="myApp" ng-controller="timelineCtrl" id = "tableTimeline">
+    <table border = 1>
+        <tr>
+            <td> </td>
+            <td>Título</td>
+            <td>Artista</td>
+            <td>Album</td>
+            <td>Duración</td>
+            <td>Score</td>
+        </tr>
+        <tr ng-repeat="x in showSongsPlayed">
+            <td> </td>
+            <td >{{ x.songPlayed.name }}</td>
+            <td > {{ x.songPlayed.albums}}</td>
+            <td >{{ x.songPlayed.albums }}</td>
+            <td >{{ x.songPlayed.duration }}</td>
+            <td >{{ x.songPlayed.avgRating }}</td>
+        </tr>
+    </table>
 </div>
 
 <div id="player">
@@ -60,40 +84,3 @@
 
 </body>
 </html>
-
-
-<!--
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset ="UTF-8">
-    <title> Spotify </title>
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"> </script>
-	<link rel="stylesheet" type="text/css" href="css/style1.css">
-</head>
-<body>
-	<header>
-		<div id="logo"></div>
-	</header>
-	<div id="search">search</div>
-	<section>	
-	<div id="menuindex">
-	    <ul>
-	    	<li><a href="index.html">Homie</a></li>
-	    	<li><a href="">Your Music</a></li>
-	    	<li><a href="playlistsPage.html">Playlists</a></li>
-	    </ul>
-		<div id="userIcon">
-			<div style="text-align: center;">
-				<a href="userPage.html"><img src = "../img/muneco.jpg" width = 100 height =100 ></a>
-				<br><a href="userPage.html">Your name</a>
-			</div>
-		</div>
-	</div>
-	<div style="text-align: center;"><img src = "../img/mockingjay.png" width = 800 height =370 ></div>
-	</section>
-	<div id="player"></div>
-<footer></footer>
-</body>
-</html>
--->

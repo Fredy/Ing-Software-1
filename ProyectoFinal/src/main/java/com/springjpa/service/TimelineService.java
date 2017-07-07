@@ -25,10 +25,9 @@ public class TimelineService {
         return timelineRepository.findAll();
     }
 
-    //TODO: revisar que hace
-    public Timeline findById(long idT){
+    /* public Timeline findById(long idT){
         return timelineRepository.findOne(idT);
-    }
+    } */
 
     public Collection<Played> getSongsPlayed(Long timelineId){return timelineRepository.getSongsPlayed(timelineId);}
 
