@@ -23,11 +23,6 @@ public class PlaylistService {
         return playlistRepository.findAll();
     }
 
-    //TODO: recuerdar que hace
-	public PlayList findById(long id){
-        return playlistRepository.findOne(id);
-    }
-	
 	public Collection<Song> getSongList(long playlistId){
 		return playlistRepository.getSongList(playlistId);
 	}

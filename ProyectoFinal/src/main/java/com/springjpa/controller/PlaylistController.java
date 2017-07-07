@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.springjpa.domain.PlayList;
 import com.springjpa.domain.Song;
+import com.springjpa.domain.User;
 import com.springjpa.service.PlaylistService;
 
 @Controller
@@ -47,6 +48,10 @@ public class PlaylistController {
         return playlistService.getSongList(id);
     }
 
-    //TODO: mostrar los seguidores de la playlist
-
+	//Muestra todos los seguidores de la playlist	
+	@RequestMapping(value ="/getFollowersPlaylist", method = RequestMethod.GET)
+    @ResponseBody
+	public Collection<User> getFollowers(long playlistId){
+		return playlistService.getFollowers( playlistId );
+	}
 }

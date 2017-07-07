@@ -12,14 +12,14 @@ import javax.persistence.*;
 
 @Entity 
 //@Table(name = "Playlist")
-public class PlayList extends SongList {
+public class PlayList {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	protected long id;
 	protected String name;
 	protected Date creationDate;
-	private boolean active;	
+	protected boolean active;	
 	
 	@ManyToMany
 		@JoinTable(name = "playList_song", 
@@ -45,9 +45,9 @@ public class PlayList extends SongList {
 	}
 
 	public PlayList(String name,User user) {
+		songList = new ArrayList<Song>();
 		this.name = name;
 		this.user = user;
-		songList = new ArrayList<Song>();
 		followers= new ArrayList<User>();
 		active    = true;
 	}
@@ -66,10 +66,7 @@ public class PlayList extends SongList {
 	public Date getCreationDate(){
 		return creationDate;
 	}
-	public void addSong (Song newSong){
-        songList.add(newSong);
-	}
-	
+
 	public void activate(){
         active = true;
     }
@@ -94,4 +91,20 @@ public class PlayList extends SongList {
 		followers.remove(FollowerToDelete);
 	}
 
+	public void addAlbum (Album newAlbum){
+        songList.addAll(newAlbum.getSongs());
+	}
+
+    public void removeSong (Song songToDelete){
+        songList.remove(songToDelete);
+    }
+
+    public List<Song> getSongList() {
+		return songList;
+	}
+    
+    public void addSong (Song newSong){
+      songList.add(newSong);
+	}
+	
 }
