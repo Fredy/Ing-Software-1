@@ -30,9 +30,9 @@ public class TimelineController {
     }
 
     //Muestra el conjunto de canciones que componen al Timeline
-    @RequestMapping(value ="/getSongs", method = RequestMethod.GET)
+    @RequestMapping(value ="/showTimeline", method = RequestMethod.GET)
     @ResponseBody
-    public Collection<Played> getIdTimeline(@RequestParam Long userId){
-        Long idTimeline = timelineService.getIdTimeline(userId);
+    public Collection<Played> getIdTimeline(@RequestParam Long idT){ //TODO: cambiar idT por UserId
+        Long idTimeline = timelineService.getIdTimeline(idT);
         return timelineService.getSongsPlayed(idTimeline);}
 }
