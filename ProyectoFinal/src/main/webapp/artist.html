@@ -44,8 +44,8 @@
     </div>
     <div id="albums">
     <div ng-controller="AlbumCtrl" id="getArtistAlbums">
-        <ul ng-repeat="album in showAlbums" id="listAlbums">
-            <li class="eachAlbum">
+        <ul  id="listAlbums">
+            <li class="eachAlbum" ng-repeat="album in showAlbums">
                 <a href="album.html?id={{album.id}}" ng-bind="album.name"></a>
                 <br>
                 <a href="album.html?id={{album.id}}">

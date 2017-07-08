@@ -1,5 +1,6 @@
 package com.springjpa.controller;
 
+import com.springjpa.domain.Album;
 import com.springjpa.domain.Artist;
 import com.springjpa.domain.Song;
 import com.springjpa.service.AlbumService;
@@ -29,5 +30,11 @@ public class AlbumController {
    @ResponseBody
    Collection<Song> getSongsOfAlbum(@RequestParam Long id){
         return albumService.getSongsofAlbum(id);
+   }
+
+   @RequestMapping("/ObjAlbum")
+   @ResponseBody
+   Album albumes(@RequestParam Long id) {
+       return albumService.findAlbumById(id);
    }
 }
