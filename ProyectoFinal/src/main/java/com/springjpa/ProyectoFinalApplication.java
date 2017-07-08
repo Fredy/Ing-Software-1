@@ -147,6 +147,7 @@ public class ProyectoFinalApplication {
 		songRepository.save(s9);
 		songRepository.save(s10);
 		artistRepository.save(art1);
+
 		alb1.getSongs().add(s3);
 		alb1.getSongs().add(s4);
 		alb1.getSongs().add(s5);
@@ -155,6 +156,13 @@ public class ProyectoFinalApplication {
 		alb2.getSongs().add(s8);
 		alb2.getSongs().add(s9);
 		alb2.getSongs().add(s10);
+        albumRepository.save(alb1);
+        albumRepository.save(alb2);
+        alb1.getArtists().add(art1);
+        alb2.getArtists().add(art1);
+        art1.getAlbums().add(alb1);
+        art1.getAlbums().add(alb2);
+
 		alb1.getArtists().add(art1);
 		alb2.getArtists().add(art1);
 		art1.getAlbums().add(alb1);
@@ -168,17 +176,8 @@ public class ProyectoFinalApplication {
 		s9.getAlbums().add(alb2);
 		s10.getAlbums().add(alb2);
 
-		albumRepository.save(alb1);
-		albumRepository.save(alb2);
-		songRepository.save(s3);
-		songRepository.save(s4);
-		songRepository.save(s5);
-		songRepository.save(s6);
-		songRepository.save(s7);
-		songRepository.save(s8);
-		songRepository.save(s9);
-		songRepository.save(s10);
-		artistRepository.save(art1);
+
+
 
 		ratingService.doRating(usr1,s1,3);
 	}

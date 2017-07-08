@@ -48,6 +48,14 @@ header {
     background: #8b98a5;
 }
 
+#search form div table tr td{
+    outline: none;
+    background: #8b98a5;
+    width: 450px;
+    display: inline-block;
+    list-style-type: none;
+}
+
 #search input::-webkit-input-placeholder{
     color : #3c3c3c;
 }
@@ -115,6 +123,16 @@ body {
     padding: 0px
 }
 
+#resultSearch {
+    position: fixed;
+    top: 65px;
+    display: inline-block;
+    margin: 20px 0 0 0;
+    max-width: 160px;
+    width: 180px;
+    padding: 0px
+}
+
 .leftBItem {
     float: left;
     width: 100%;
@@ -148,4 +166,27 @@ body {
     border-width: 1px 0 0 0;
     border-color: #858687;
 
+}
+
+
+.searchItem {
+    float: right;
+    width: 100%;
+    list-style-type: none;
+}
+
+.searchItem a {
+    /* font-weight: bold; */
+    display: inline-block;
+    padding: 7.5px 20px 7.5px 20px;
+    width: 100%;
+    height: 100%;
+    color: #2d343a;
+    text-decoration: none;
+    font-size: 16.5px;
+}
+
+.searchItem a:hover{
+    color: #e4e6e8;
+    background: #1b2229;
 }
