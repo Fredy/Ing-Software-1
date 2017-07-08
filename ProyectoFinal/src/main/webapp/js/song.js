@@ -3,9 +3,17 @@
  */
 
 var app = angular.module('app', []);
+app.controller('searchController',function($scope,$http) {
+    $http.get("/songs").then(function(response) {
+        $scope.showSearchMatched = response.data;
+    });
+})
+
+/*
 app.controller('searchController',function($scope) {
-    var content = $scope.content;
-    alert(content);
+    $scope.findSearchContent = function () {
+        
+    }
 })
 /*
 app.controller('searchController',['$scope', function($scope) {
