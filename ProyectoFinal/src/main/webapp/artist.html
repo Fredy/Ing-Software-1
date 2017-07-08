@@ -46,9 +46,9 @@
     <div ng-controller="AlbumCtrl" id="getArtistAlbums">
         <ul ng-repeat="album in showAlbums" id="listAlbums">
             <li class="eachAlbum">
-                <a href="album.html" ng-bind="album.name"></a>
+                <a href="album.html?id={{album.id}}" ng-bind="album.name"></a>
                 <br>
-                <a href="album.html">
+                <a href="album.html?id={{album.id}}">
                     <img ng-src="{{album.pathToAlbumImg}}" id="albumsImgs">
                 </a>
             </li>
