@@ -5,7 +5,9 @@ import com.springjpa.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 @Service
 public class UserService {
@@ -30,5 +32,14 @@ public class UserService {
 
     public void updateRelvantInfo(Long id, String name, String email) {
         userRepository.changeRelevantInfo(id, name, email);
+    }
+
+    public Long login(String username, String password) {
+        List<Long> id = new ArrayList( userRepository.login(username, password));
+        if (id.isEmpty())
+            return -1l;
+        else
+            return id.get(0);
+
     }
 }

@@ -15,18 +15,27 @@
 
     <div id="search" ng-app="app" ng-controller="searchController">
         <form action="">
-            <input type="text" name="searchContent" ng-model="id" placeholder="Search" >
-            <!--<button ng-click="logId()"> Search </button> -->
+            <input type="text" name="search" ng-model="searchContent" placeholder="Search" autocomplete="off">
+            <!--<button ng-click="findSearchContent()"> Search </button> -->
+            <div ng-show="searchContent">
+            <!--<table border = 1> -->
+                <ul id="resultSearch" >
+                     <li class="searchItem" ng-repeat="x in showSearchMatched | filter: searchContent">
+                         <a href=" " >{{ x.name }}</a>
+                     </li>
+                </ul>
+                <!--</table> -->
+            </div>
         </form>
     </div>
 
     <div id="userImgA">
-        <a  href="">
-                    <span id="userImg"
-                          style="background-image:url('img/user.jpg')">
-                    </span>
-            <!-- </div> -->
-        </a>
+            <a  href="">
+                        <span id="userImg"
+                              style="background-image:url('img/user.jpg')">
+                        </span>
+                <!-- </div> -->
+            </a>
     </div>
 
 </header>
