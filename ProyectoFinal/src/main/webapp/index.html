@@ -5,6 +5,7 @@
     <title> Spotify </title>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"> </script>
     <script src="../js/timeline.js"></script>
+    <script src="../js/route.js"></script>
     <link href="css/style.css" rel="stylesheet" type="text/css" media="screen">
     <link href="css/timeline.css" rel="stylesheet" type="text/css" >
 </head>
@@ -22,12 +23,12 @@
     </div>
 
     <div id="userImgA">
-        <a  href="userPage.html"> <!-- TODO: linkear con el div verdadero -->
+        <a href=""> <!-- TODO: linkear con el div verdadero -->
                     <span id="userImg"
                           style="background-image:url('img/user.jpg')">
                     </span>
             <!-- </div> -->
-        </a>
+        </>
     </div>
 
 </header>
@@ -78,7 +79,21 @@
     </table>
 </div>
 
+<div style="display: none; float: right; width: 60%;"   id = "menuUser" >
+    <img src = "img/muneco.jpg" width = 100 height =100 >
+    <br>Your name
+    <br><br>
+    <ul>
+        <li><a href="">Followed</a></li>
+        <li><a href="">Followers</a></li>
+        <li><a href="index.html">Timeline</a></li>
+    </ul>
+    <br>
+    <a href="userSettings.html"><img src = "img/settings-icon.png" width = 40 height =40 ></a>
+</div>
+
 <div id="player">
+<!-- TODo: hacer aqi la parte del player ,probar con un control-->
 
 </div>
 
