@@ -23,6 +23,7 @@ public class Album {
     @Column (name = "name")
     private String name;
     private boolean active;
+    private String pathToAlbumImg;
 
     @ManyToMany
     @JoinTable(
@@ -98,5 +99,13 @@ public class Album {
 
     public void setArtists(Vector<Artist> artists) {
         this.artists = artists;
+    }
+
+    public String isPathToAlbumImg() {
+        return pathToAlbumImg;
+    }
+
+    public void setPathToAlbumImg(String pathToAlbumImg) {
+        this.pathToAlbumImg = pathToAlbumImg;
     }
 }

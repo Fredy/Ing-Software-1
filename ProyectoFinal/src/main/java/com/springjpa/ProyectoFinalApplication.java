@@ -121,8 +121,11 @@ public class ProyectoFinalApplication {
 		Album alb2 = new Album();
 		Artist art1 = new Artist();
 		art1.setName("Royal Blood");
+		art1.setArtistImagePath("img/royalbloodartist.jpg");
 		alb1.setName("How did we get so dark?");
 		alb2.setName("Royal Blood");
+		alb1.setPathToAlbumImg("img/royalblood.jpg");
+		alb2.setPathToAlbumImg("img/whodidwegetsodark.jpg");
 		Song s3 = new Song("Hook, Line and Sinker");
 		Song s4 = new Song("Lights out");
 		Song s5 = new Song("How did we get so dark?");

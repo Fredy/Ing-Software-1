@@ -44,6 +44,8 @@ public class Artist {
     )
     private List<User> followedBy;
 
+    private String artistImagePath;
+
     //Methods
 
     public Artist(){
@@ -104,4 +106,11 @@ public class Artist {
         active=false;
     }
 
+    public String getArtistImagePath() {
+        return artistImagePath;
+    }
+
+    public void setArtistImagePath(String artistImagePath) {
+        this.artistImagePath = artistImagePath;
+    }
 }
