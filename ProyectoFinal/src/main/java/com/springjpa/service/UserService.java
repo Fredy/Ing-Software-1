@@ -24,7 +24,11 @@ public class UserService {
         return userRepository.getFollowedUsers(id);
     }
 
-    public Object showRelevantInfo(Long id){
+    public Object showRelevantInfo(Long id) {
         return userRepository.getRelevantInfo(id);
+    }
+
+    public void updateRelvantInfo(Long id, String name, String email) {
+        userRepository.changeRelevantInfo(id, name, email);
     }
 }

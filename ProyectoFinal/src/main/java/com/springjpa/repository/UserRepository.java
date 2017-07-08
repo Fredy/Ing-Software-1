@@ -46,5 +46,9 @@ public interface UserRepository extends CrudRepository<User, Long>{
     //Get relevant information
     @Query("SELECT u.name AS name, u.email AS email FROM User u where u.id = ?1" )
     Object getRelevantInfo(Long id);
+
+    @Query("UPDATE  User SET name = ?2 , email = ?3 WHERE id = ?1")
+    void changeRelevantInfo(Long id, String name, String email);
+
 }
 
